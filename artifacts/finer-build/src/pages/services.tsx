@@ -1,6 +1,7 @@
 import { PageWrapper } from "@/components/layout/PageWrapper";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/button";
+import { SpinningBorder } from "@/components/ui/SpinningBorder";
 import { Link } from "wouter";
 
 const SERVICES = [
@@ -76,7 +77,9 @@ export default function Services() {
           We handle a wide variety of bespoke residential construction requirements. Contact us to discuss your specific project needs.
         </p>
         <Link href="/contact">
-          <Button variant="gold" size="lg">Contact Us</Button>
+          <SpinningBorder>
+            <Button variant="gold" size="lg">Contact Us</Button>
+          </SpinningBorder>
         </Link>
       </section>
     </PageWrapper>

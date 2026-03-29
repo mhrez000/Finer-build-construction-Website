@@ -1,6 +1,7 @@
 import { PageWrapper } from "@/components/layout/PageWrapper";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/button";
+import { SpinningBorder } from "@/components/ui/SpinningBorder";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, ShieldCheck, Ruler, Home as HomeIcon, Hammer, Wrench } from "lucide-react";
@@ -34,7 +35,9 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-6">
               <Link href="/contact">
-                <Button variant="gold" size="lg">Request a Quote</Button>
+                <SpinningBorder>
+                  <Button variant="gold" size="lg">Request a Quote</Button>
+                </SpinningBorder>
               </Link>
               <Link href="/projects">
                 <Button variant="outline" size="lg">View Portfolio</Button>

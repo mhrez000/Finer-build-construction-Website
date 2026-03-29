@@ -2,6 +2,7 @@ import { PageWrapper } from "@/components/layout/PageWrapper";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { SpinningBorder } from "@/components/ui/SpinningBorder";
 
 export default function About() {
   return (
@@ -80,7 +81,9 @@ export default function About() {
       <section className="py-32 text-center">
         <h2 className="text-3xl md:text-4xl font-serif mb-8">Ready to discuss your vision?</h2>
         <Link href="/contact">
-          <Button variant="gold" size="lg">Start a Conversation</Button>
+          <SpinningBorder>
+            <Button variant="gold" size="lg">Start a Conversation</Button>
+          </SpinningBorder>
         </Link>
       </section>
     </PageWrapper>

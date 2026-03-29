@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { SpinningBorder } from "@/components/ui/SpinningBorder";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -61,9 +62,11 @@ export function Navigation() {
               </Link>
             ))}
             <Link href="/contact">
-              <Button variant="gold" className="ml-4">
-                Request a Quote
-              </Button>
+              <SpinningBorder className="ml-4">
+                <Button variant="gold">
+                  Request a Quote
+                </Button>
+              </SpinningBorder>
             </Link>
           </nav>
 
@@ -100,9 +103,11 @@ export function Navigation() {
           ))}
           <div className="w-12 h-[1px] bg-border my-4" />
           <Link href="/contact">
-            <Button variant="gold" size="lg">
-              Request a Quote
-            </Button>
+            <SpinningBorder>
+              <Button variant="gold" size="lg">
+                Request a Quote
+              </Button>
+            </SpinningBorder>
           </Link>
         </nav>
       </div>
