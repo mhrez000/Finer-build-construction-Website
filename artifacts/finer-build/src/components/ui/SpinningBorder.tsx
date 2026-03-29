@@ -15,7 +15,7 @@ export function SpinningBorder({
 }: SpinningBorderProps) {
   return (
     <div
-      className={cn("relative inline-flex overflow-hidden", className)}
+      className={cn("relative inline-flex overflow-hidden rounded-xl", className)}
       style={{ padding: borderSize }}
     >
       {/* Spinning conic gradient layer — larger than container so it fills edge to edge */}
