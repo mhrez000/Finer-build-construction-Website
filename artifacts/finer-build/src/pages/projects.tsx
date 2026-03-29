@@ -53,7 +53,7 @@ export default function Projects() {
             </h1>
           </div>
           <p className="max-w-md text-muted-foreground">
-            A curated selection of our finest residential projects across Greater Sydney, showcasing our commitment to architectural precision.
+            A curated selection of our finest residential projects across Greater Melbourne, showcasing our commitment to architectural precision.
           </p>
         </div>
       </section>

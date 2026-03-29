@@ -23,7 +23,7 @@ export default function Home() {
 
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full relative z-10">
           <div className="max-w-3xl">
-            <SectionLabel>Sydney, Australia</SectionLabel>
+            <SectionLabel>Melbourne, Australia</SectionLabel>
             <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-serif text-foreground leading-[1.1] mb-8">
               Crafting Homes.<br />
               <span className="text-muted-foreground italic">Defining</span><br />
@@ -73,7 +73,7 @@ export default function Home() {
               Mastering the art of residential construction.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-10">
-              From structural timber framing to exquisite outdoor living spaces, Finer Build delivers architectural visions with uncompromising quality. We specialize in bespoke residential projects across Greater Sydney, ensuring every stud, joist, and fixture meets our exacting standards.
+              From structural timber framing to exquisite outdoor living spaces, Finer Build delivers architectural visions with uncompromising quality. We specialize in bespoke residential projects across Greater Melbourne, ensuring every stud, joist, and fixture meets our exacting standards.
             </p>
             <Link href="/services" className="w-fit">
               <Button variant="outline" className="gap-2">

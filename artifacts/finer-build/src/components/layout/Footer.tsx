@@ -10,7 +10,7 @@ export function Footer() {
             Finer Build
           </span>
           <p className="text-muted text-sm leading-relaxed max-w-sm">
-            Building your vision, one frame at a time. Defining excellence in residential construction across Greater Sydney.
+            Building your vision, one frame at a time. Defining excellence in residential construction across Greater Melbourne.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export function Footer() {
             info@finerbuild.com.au
           </a>
           <span className="text-muted text-sm mt-4">
-            Greater Sydney & Surrounds<br/>
+            Greater Melbourne & Surrounds<br/>
             Mon-Fri: 7am - 5pm
           </span>
         </div>

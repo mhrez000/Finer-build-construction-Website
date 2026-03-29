@@ -28,10 +28,10 @@ export default function About() {
           </div>
           
           <div className="flex flex-col justify-center max-w-xl">
-            <h2 className="text-3xl md:text-4xl font-serif mb-8">Over a decade of redefining residential spaces in Sydney.</h2>
+            <h2 className="text-3xl md:text-4xl font-serif mb-8">Over a decade of redefining residential spaces in Melbourne.</h2>
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                Finer Build Construction was founded with a singular vision: to bring unparalleled precision and structural integrity to the residential building sector. Based in Greater Sydney, we have spent over 10 years mastering the complexities of modern framing, renovations, and outdoor construction.
+                Finer Build Construction was founded with a singular vision: to bring unparalleled precision and structural integrity to the residential building sector. Based in Greater Melbourne, we have spent over 10 years mastering the complexities of modern framing, renovations, and outdoor construction.
               </p>
               <p>
                 We believe that the unseen elements of a home—the studs, the joists, the structural beams—are just as critical as the final finishes. A truly luxurious home requires a perfect skeleton.

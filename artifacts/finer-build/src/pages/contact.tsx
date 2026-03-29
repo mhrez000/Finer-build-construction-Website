@@ -87,7 +87,7 @@ export default function Contact() {
             <div>
               <h2 className="text-3xl font-serif mb-6">Contact Information</h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Reach out to discuss your upcoming residential construction, framing, or renovation project in Greater Sydney.
+                Reach out to discuss your upcoming residential construction, framing, or renovation project in Greater Melbourne.
               </p>
               
               <div className="flex flex-col gap-8">
@@ -111,7 +111,7 @@ export default function Contact() {
                   <MapPin className="w-5 h-5 text-accent mt-1" strokeWidth={1.5} />
                   <div>
                     <span className="block text-xs font-semibold tracking-widest uppercase mb-1">Service Area</span>
-                    <span className="text-lg">Greater Sydney & Surrounds</span>
+                    <span className="text-lg">Greater Melbourne & Surrounds</span>
                   </div>
                 </div>
 
