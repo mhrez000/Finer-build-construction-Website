@@ -1,0 +1,11 @@
+packages:
+  "framer-motion": "For elegant, slow cinematic entry animations matching the luxury aesthetic"
+  "react-hook-form": "For managing the contact form state"
+  "@hookform/resolvers": "For validating the contact form with Zod"
+  "zod": "For defining the contact form schema"
+  "clsx": "For class name merging"
+  "tailwind-merge": "For class name merging"
+
+notes:
+  - No backend API specified, using mock mutations with delays to simulate API calls for the contact form.
+  - Relying on Unsplash URLs for high-quality architectural and construction imagery.

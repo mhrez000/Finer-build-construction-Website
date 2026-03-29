@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Finer Build Construction"
+version = "1.0.0"
+id = "artifacts/finer-build"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19718
+
+[services.development]
+run = "pnpm --filter @workspace/finer-build run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/finer-build", "run", "build" ]
+publicDir = "artifacts/finer-build/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19718"
+BASE_PATH = "/"
