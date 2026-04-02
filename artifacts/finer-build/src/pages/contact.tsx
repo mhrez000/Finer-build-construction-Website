@@ -1,6 +1,5 @@
 import { PageWrapper } from "@/components/layout/PageWrapper";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
@@ -8,15 +7,16 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
-import { 
-  Select, 
-  SelectContent, 
-  SelectItem, 
-  SelectTrigger, 
-  SelectValue 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Mail, MapPin, Phone, Clock } from "lucide-react";
+import { Mail, MapPin, Phone, Clock, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -28,9 +28,34 @@ const contactSchema = z.object({
 
 type ContactFormValues = z.infer<typeof contactSchema>;
 
+const CONTACT_INFO = [
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "0400 000 000",
+    href: "tel:0400000000",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "info@finerbuild.com.au",
+    href: "mailto:info@finerbuild.com.au",
+  },
+  {
+    icon: MapPin,
+    label: "Service Area",
+    value: "Greater Melbourne & Surrounds",
+  },
+  {
+    icon: Clock,
+    label: "Hours",
+    value: "Mon-Fri 7am-5pm | Sat 8am-12pm",
+  },
+];
+
 export default function Contact() {
   const { toast } = useToast();
-  
+
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -39,13 +64,11 @@ export default function Contact() {
       email: "",
       service: "",
       message: "",
-    }
+    },
   });
 
-  // Mock mutation for form submission
   const mutation = useMutation({
     mutationFn: async (data: ContactFormValues) => {
-      // Simulate network delay
       await new Promise((resolve) => setTimeout(resolve, 1500));
       return data;
     },
@@ -62,7 +85,7 @@ export default function Contact() {
         title: "Error",
         description: "Something went wrong. Please try again.",
       });
-    }
+    },
   });
 
   function onSubmit(data: ContactFormValues) {
@@ -71,63 +94,75 @@ export default function Contact() {
 
   return (
     <PageWrapper>
-      <section className="pt-20 pb-12 md:pb-24 border-b border-border">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12">
-          <SectionLabel>Get in Touch</SectionLabel>
-          <h1 className="text-5xl md:text-7xl font-serif leading-[1.1]">
-            Start your <span className="italic text-muted-foreground">project.</span>
-          </h1>
+      {/* Hero */}
+      <section className="pt-32 md:pt-40 pb-16 md:pb-20">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <SectionLabel>Contact</SectionLabel>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.05]">
+              Let's <span className="italic text-accent">talk.</span>
+            </h1>
+            <p className="max-w-lg text-muted-foreground text-lg mt-6">
+              Ready to start your project? Reach out and we'll get back to you within 24 hours.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-          
-          <div className="lg:col-span-5 flex flex-col gap-12">
-            <div>
-              <h2 className="text-3xl font-serif mb-6">Contact Information</h2>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Reach out to discuss your upcoming residential construction, framing, or renovation project in Greater Melbourne.
-              </p>
-              
-              <div className="flex flex-col gap-8">
-                <div className="flex items-start gap-4">
-                  <Phone className="w-5 h-5 text-accent mt-1" strokeWidth={1.5} />
+      {/* Contact Content */}
+      <section className="section-padding border-t border-border">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
+          {/* Contact Info */}
+          <motion.div
+            className="lg:col-span-4 flex flex-col gap-10"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="flex flex-col gap-8">
+              {CONTACT_INFO.map((item, i) => (
+                <div key={i} className="flex items-start gap-4 group">
+                  <div className="w-10 h-10 flex items-center justify-center bg-card border border-border group-hover:border-accent/50 transition-colors duration-300 shrink-0">
+                    <item.icon className="w-4 h-4 text-accent" strokeWidth={1.5} />
+                  </div>
                   <div>
-                    <span className="block text-xs font-semibold tracking-widest uppercase mb-1">Phone</span>
-                    <a href="tel:0400000000" className="text-lg hover:text-accent transition-colors">0400 000 000</a>
+                    <span className="block text-[0.6rem] font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-1">
+                      {item.label}
+                    </span>
+                    {item.href ? (
+                      <a href={item.href} className="text-foreground hover:text-accent transition-colors duration-300">
+                        {item.value}
+                      </a>
+                    ) : (
+                      <span className="text-foreground">{item.value}</span>
+                    )}
                   </div>
                 </div>
-                
-                <div className="flex items-start gap-4">
-                  <Mail className="w-5 h-5 text-accent mt-1" strokeWidth={1.5} />
-                  <div>
-                    <span className="block text-xs font-semibold tracking-widest uppercase mb-1">Email</span>
-                    <a href="mailto:info@finerbuild.com.au" className="text-lg hover:text-accent transition-colors">info@finerbuild.com.au</a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <MapPin className="w-5 h-5 text-accent mt-1" strokeWidth={1.5} />
-                  <div>
-                    <span className="block text-xs font-semibold tracking-widest uppercase mb-1">Service Area</span>
-                    <span className="text-lg">Greater Melbourne & Surrounds</span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <Clock className="w-5 h-5 text-accent mt-1" strokeWidth={1.5} />
-                  <div>
-                    <span className="block text-xs font-semibold tracking-widest uppercase mb-1">Hours</span>
-                    <span className="text-lg">Mon - Fri: 7:00 AM - 5:00 PM</span><br/>
-                    <span className="text-lg">Sat: 8:00 AM - 12:00 PM</span>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
-          </div>
 
-          <div className="lg:col-span-7 bg-muted/30 p-8 md:p-12 border border-border">
+            {/* Decorative line */}
+            <div className="accent-line" />
+
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              We service all of Greater Melbourne including the Eastern Suburbs,
+              Inner West, Northern Suburbs, and the Mornington Peninsula.
+            </p>
+          </motion.div>
+
+          {/* Form */}
+          <motion.div
+            className="lg:col-span-8 bg-card border border-border p-8 md:p-12"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
             <h2 className="text-2xl font-serif mb-8">Send an Inquiry</h2>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -137,9 +172,15 @@ export default function Contact() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs uppercase tracking-widest">Full Name</FormLabel>
+                        <FormLabel className="text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">
+                          Full Name
+                        </FormLabel>
                         <FormControl>
-                          <Input placeholder="John Doe" className="h-12 bg-background border-border rounded-none" {...field} />
+                          <Input
+                            placeholder="John Doe"
+                            className="h-12 bg-background border-border focus:border-accent transition-colors"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -150,9 +191,15 @@ export default function Contact() {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-xs uppercase tracking-widest">Phone Number</FormLabel>
+                        <FormLabel className="text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">
+                          Phone Number
+                        </FormLabel>
                         <FormControl>
-                          <Input placeholder="0400 000 000" className="h-12 bg-background border-border rounded-none" {...field} />
+                          <Input
+                            placeholder="0400 000 000"
+                            className="h-12 bg-background border-border focus:border-accent transition-colors"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -165,9 +212,16 @@ export default function Contact() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-xs uppercase tracking-widest">Email Address</FormLabel>
+                      <FormLabel className="text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">
+                        Email Address
+                      </FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="john@example.com" className="h-12 bg-background border-border rounded-none" {...field} />
+                        <Input
+                          type="email"
+                          placeholder="john@example.com"
+                          className="h-12 bg-background border-border focus:border-accent transition-colors"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -179,14 +233,16 @@ export default function Contact() {
                   name="service"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-xs uppercase tracking-widest">Service Required</FormLabel>
+                      <FormLabel className="text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">
+                        Service Required
+                      </FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger className="h-12 bg-background border-border rounded-none">
+                          <SelectTrigger className="h-12 bg-background border-border">
                             <SelectValue placeholder="Select a service" />
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent className="rounded-none border-border">
+                        <SelectContent className="border-border bg-card">
                           <SelectItem value="stick-framing">Stick Built Framing</SelectItem>
                           <SelectItem value="prefab-framing">Pre-Fab Framing</SelectItem>
                           <SelectItem value="renovations">Renovations</SelectItem>
@@ -205,12 +261,14 @@ export default function Contact() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-xs uppercase tracking-widest">Project Details</FormLabel>
+                      <FormLabel className="text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">
+                        Project Details
+                      </FormLabel>
                       <FormControl>
-                        <Textarea 
-                          placeholder="Tell us about your project, location, and timeline..." 
-                          className="min-h-[150px] bg-background border-border rounded-none resize-y" 
-                          {...field} 
+                        <Textarea
+                          placeholder="Tell us about your project, location, and timeline..."
+                          className="min-h-[140px] bg-background border-border focus:border-accent transition-colors resize-y"
+                          {...field}
                         />
                       </FormControl>
                       <FormMessage />
@@ -218,19 +276,18 @@ export default function Contact() {
                   )}
                 />
 
-                <Button 
-                  type="submit" 
-                  variant="gold" 
-                  size="lg" 
-                  className="w-full mt-4"
+                <button
+                  type="submit"
                   disabled={mutation.isPending}
+                  className="w-full flex items-center justify-center gap-2 text-[0.7rem] font-semibold tracking-[0.12em] uppercase bg-accent text-accent-foreground px-8 py-4 hover:bg-accent/90 transition-colors duration-300 disabled:opacity-50"
                 >
-                  {mutation.isPending ? "Sending..." : "Submit Inquiry"}
-                </Button>
+                  {mutation.isPending ? "Sending..." : (
+                    <>Submit Inquiry <ArrowRight size={14} /></>
+                  )}
+                </button>
               </form>
             </Form>
-          </div>
-
+          </motion.div>
         </div>
       </section>
     </PageWrapper>
