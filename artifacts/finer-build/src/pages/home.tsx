@@ -3,8 +3,43 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/button";
 import { SpinningBorder } from "@/components/ui/SpinningBorder";
 import { ProjectCard } from "@/components/ProjectCard";
+import { HouseFrameBuilder } from "@/components/HouseFrameBuilder";
 import { Link } from "wouter";
+import { motion, type Variants } from "framer-motion";
 import { ArrowRight, CheckCircle2, ShieldCheck, Ruler, Home as HomeIcon, Hammer, Wrench } from "lucide-react";
+
+// -------------------------------------------------------------
+// Shared animation variants
+// -------------------------------------------------------------
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+const staggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.9, ease: EASE },
+  },
+};
+
+const fadeUpSmall: Variants = {
+  hidden: { opacity: 0, y: 14 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: EASE },
+  },
+};
 
 export default function Home() {
   return (
@@ -13,27 +48,43 @@ export default function Home() {
       <section className="relative h-screen min-h-[600px] flex items-center">
         <div className="absolute inset-0 z-0">
           {/* landing page hero modern architectural home construction */}
-          <img 
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2940&auto=format&fit=crop" 
-            alt="Modern construction" 
+          <motion.img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2940&auto=format&fit=crop"
+            alt="Modern construction"
             className="w-full h-full object-cover grayscale opacity-40"
+            initial={{ scale: 1.12 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 2.2, ease: EASE }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background" />
         </div>
 
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full relative z-10">
-          <div className="max-w-3xl">
-            <SectionLabel>Melbourne, Australia</SectionLabel>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-serif text-foreground leading-[1.1] mb-8">
+          <motion.div
+            className="max-w-3xl"
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeUpSmall}>
+              <SectionLabel>Melbourne, Australia</SectionLabel>
+            </motion.div>
+            <motion.h1
+              variants={fadeUp}
+              className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-serif text-foreground leading-[1.1] mb-8"
+            >
               Crafting Homes.<br />
               <span className="text-muted-foreground italic">Defining</span><br />
               Excellence.
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-xl font-light">
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="text-lg md:text-xl text-muted-foreground mb-12 max-w-xl font-light"
+            >
               Premium residential construction, renovations, and architectural framing built on a foundation of unyielding precision.
-            </p>
-            <div className="flex flex-wrap gap-6">
+            </motion.p>
+            <motion.div variants={fadeUp} className="flex flex-wrap gap-6">
               <Link href="/contact">
                 <SpinningBorder>
                   <Button variant="gold" size="lg">Request a Quote</Button>
@@ -42,124 +93,270 @@ export default function Home() {
               <Link href="/projects">
                 <Button variant="outline" size="lg">View Portfolio</Button>
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Trust Signals */}
       <section className="py-12 border-y border-border bg-background">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+          >
             {[
               { icon: ShieldCheck, label: "Fully Licensed", sub: "NSW Builder" },
               { icon: CheckCircle2, label: "Fully Insured", sub: "Comprehensive coverage" },
               { icon: Ruler, label: "10+ Years", sub: "Industry experience" },
               { icon: HomeIcon, label: "Australian Standards", sub: "Exceeding requirements" }
             ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center text-center gap-3">
+              <motion.div
+                key={i}
+                variants={fadeUpSmall}
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 300, damping: 18 }}
+                className="flex flex-col items-center text-center gap-3"
+              >
                 <item.icon className="w-8 h-8 text-accent mb-2" strokeWidth={1.5} />
                 <span className="text-sm font-semibold tracking-widest uppercase">{item.label}</span>
                 <span className="text-xs text-muted-foreground">{item.sub}</span>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Intro / Services Teaser */}
       <section className="section-padding">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-          <div className="lg:col-span-5 flex flex-col justify-center">
-            <SectionLabel>Our Expertise</SectionLabel>
-            <h2 className="text-4xl md:text-5xl font-serif mb-8 text-balance">
+          <motion.div
+            className="lg:col-span-5 flex flex-col justify-center"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.div variants={fadeUpSmall}>
+              <SectionLabel>Our Expertise</SectionLabel>
+            </motion.div>
+            <motion.h2
+              variants={fadeUp}
+              className="text-4xl md:text-5xl font-serif mb-8 text-balance"
+            >
               Mastering the art of residential construction.
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-10">
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="text-muted-foreground leading-relaxed mb-10"
+            >
               From structural timber framing to exquisite outdoor living spaces, Finer Build delivers architectural visions with uncompromising quality. We specialize in bespoke residential projects across Greater Melbourne, ensuring every stud, joist, and fixture meets our exacting standards.
-            </p>
-            <Link href="/services" className="w-fit">
-              <Button variant="outline" className="gap-2">
-                All Services <ArrowRight size={16} />
-              </Button>
-            </Link>
-          </div>
-          
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-px bg-border">
+            </motion.p>
+            <motion.div variants={fadeUp}>
+              <Link href="/services" className="w-fit">
+                <Button variant="outline" className="gap-2">
+                  All Services <ArrowRight size={16} />
+                </Button>
+              </Link>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-px bg-border"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+          >
             {[
               { icon: Hammer, title: "Stick Built Framing", desc: "Custom on-site structural framing." },
               { icon: Wrench, title: "Pre-Fab Framing", desc: "Efficient, precision off-site manufacture." },
               { icon: HomeIcon, title: "Renovations", desc: "Transforming existing residential spaces." },
               { icon: Ruler, title: "Decks & Pergolas", desc: "Premium outdoor entertainment areas." }
             ].map((srv, i) => (
-              <div key={i} className="bg-background p-10 lg:p-12 group hover:bg-muted/30 transition-colors duration-500">
-                <srv.icon className="w-10 h-10 text-muted-foreground group-hover:text-accent transition-colors duration-500 mb-6" strokeWidth={1} />
+              <motion.div
+                key={i}
+                variants={fadeUpSmall}
+                whileHover={{ y: -6 }}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                className="bg-background p-10 lg:p-12 group hover:bg-muted/30 transition-colors duration-500 cursor-pointer"
+              >
+                <motion.div
+                  whileHover={{ rotate: -6, scale: 1.08 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 14 }}
+                  className="inline-block"
+                >
+                  <srv.icon className="w-10 h-10 text-muted-foreground group-hover:text-accent transition-colors duration-500 mb-6" strokeWidth={1} />
+                </motion.div>
                 <h3 className="text-xl font-serif mb-4">{srv.title}</h3>
                 <p className="text-sm text-muted-foreground">{srv.desc}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* The Craft — animated house frame builder */}
+      <section className="section-padding border-t border-border bg-muted/20">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12">
+          <motion.div
+            className="max-w-2xl mb-16 md:mb-20"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            <motion.div variants={fadeUpSmall}>
+              <SectionLabel>The Craft</SectionLabel>
+            </motion.div>
+            <motion.h2
+              variants={fadeUp}
+              className="text-4xl md:text-5xl lg:text-6xl font-serif text-balance mb-6"
+            >
+              Precision, from foundation to ridge beam.
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="text-muted-foreground leading-relaxed max-w-xl"
+            >
+              Every Finer Build home begins the same way: a poured foundation, measured twice. Then stud by stud, plate by plate, rafter by rafter, the structure rises — each member true, square, and engineered to outlast the brief.
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            className="relative mx-auto max-w-5xl"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1.0, ease: EASE }}
+          >
+            <HouseFrameBuilder />
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 max-w-4xl mx-auto"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+          >
+            {[
+              { value: "150+", label: "Homes Framed" },
+              { value: "10yr", label: "Workmanship" },
+              { value: "100%", label: "On Schedule" },
+              { value: "AS1684", label: "Compliant" }
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUpSmall}
+                className="flex flex-col items-center text-center gap-2 border-l border-accent/30 pl-6 first:border-l-0 md:border-l"
+              >
+                <span className="text-3xl md:text-4xl font-serif text-accent">{stat.value}</span>
+                <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">{stat.label}</span>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* Featured Projects */}
       <section className="section-padding bg-foreground text-background">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
-            <div className="max-w-2xl">
+          <motion.div
+            className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.4 }}
+          >
+            <motion.div variants={fadeUp} className="max-w-2xl">
               <div className="flex items-center gap-4 mb-8">
-                <div className="h-[1px] w-12 bg-accent" />
+                <motion.div
+                  className="h-[1px] bg-accent"
+                  initial={{ width: 0 }}
+                  whileInView={{ width: 48 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: EASE, delay: 0.2 }}
+                />
                 <span className="text-[0.65rem] font-bold tracking-[0.3em] uppercase text-muted">Portfolio</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-serif text-background">Selected Works</h2>
-            </div>
-            <Link href="/projects">
-              <Button variant="outline" className="border-background/20 text-background hover:bg-background hover:text-foreground">
-                View All Projects
-              </Button>
-            </Link>
-          </div>
+            </motion.div>
+            <motion.div variants={fadeUp}>
+              <Link href="/projects">
+                <Button variant="outline" className="border-background/20 text-background hover:bg-background hover:text-foreground">
+                  View All Projects
+                </Button>
+              </Link>
+            </motion.div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            <ProjectCard 
-              title="Hawthorne Deck & Pergola"
-              description="A stunning outdoor entertainment space built from premium hardwood decking, creating a seamless indoor-outdoor flow."
-              category="Outdoor Living"
-              // outdoor hardwood deck with modern pergola
-              imageUrl="https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?q=80&w=2940&auto=format&fit=crop"
-            />
-            <ProjectCard 
-              title="Mosman Renovation"
-              description="Full interior renovation and structural update of a heritage-listed terrace home, blending classic character with modern luxury."
-              category="Renovation"
-              // modern interior renovation home
-              imageUrl="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2950&auto=format&fit=crop"
-            />
-            <ProjectCard 
-              title="Double Bay New Build"
-              description="Custom stick-framed 4-bedroom family home featuring complex architectural rooflines and extensive bespoke joinery."
-              category="New Build"
-              // new construction modern timber framing
-              imageUrl="https://images.unsplash.com/photo-1541888081696-2713f0190ce2?q=80&w=2952&auto=format&fit=crop"
-            />
-          </div>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.div variants={fadeUp}>
+              <ProjectCard
+                title="Hawthorne Deck & Pergola"
+                description="A stunning outdoor entertainment space built from premium hardwood decking, creating a seamless indoor-outdoor flow."
+                category="Outdoor Living"
+                // outdoor hardwood deck with modern pergola
+                imageUrl="https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?q=80&w=2940&auto=format&fit=crop"
+              />
+            </motion.div>
+            <motion.div variants={fadeUp}>
+              <ProjectCard
+                title="Mosman Renovation"
+                description="Full interior renovation and structural update of a heritage-listed terrace home, blending classic character with modern luxury."
+                category="Renovation"
+                // modern interior renovation home
+                imageUrl="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2950&auto=format&fit=crop"
+              />
+            </motion.div>
+            <motion.div variants={fadeUp}>
+              <ProjectCard
+                title="Double Bay New Build"
+                description="Custom stick-framed 4-bedroom family home featuring complex architectural rooflines and extensive bespoke joinery."
+                category="New Build"
+                // new construction modern timber framing
+                imageUrl="https://images.unsplash.com/photo-1541888081696-2713f0190ce2?q=80&w=2952&auto=format&fit=crop"
+              />
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* Testimonial */}
       <section className="section-padding">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col items-center text-center">
-          <SectionLabel className="justify-center">Client Words</SectionLabel>
+        <motion.div
+          className="max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col items-center text-center"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          <motion.div variants={fadeUpSmall}>
+            <SectionLabel className="justify-center">Client Words</SectionLabel>
+          </motion.div>
           <div className="max-w-4xl mx-auto">
-            <p className="text-2xl md:text-4xl font-serif leading-snug mb-10">
+            <motion.p
+              variants={fadeUp}
+              className="text-2xl md:text-4xl font-serif leading-snug mb-10"
+            >
               "The attention to detail Finer Build brought to our renovation was extraordinary. Their team's craftsmanship turned our architectural plans into a reality that exceeded our expectations."
-            </p>
-            <div className="flex flex-col items-center gap-2">
+            </motion.p>
+            <motion.div variants={fadeUpSmall} className="flex flex-col items-center gap-2">
               <span className="text-sm font-semibold tracking-widest uppercase">Sarah & James T.</span>
               <span className="text-xs text-accent">Mosman Residence</span>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
     </PageWrapper>
   );
