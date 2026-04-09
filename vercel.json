@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "pnpm install --ignore-scripts --filter @workspace/finer-build...",
+  "buildCommand": "pnpm --filter @workspace/finer-build build",
+  "outputDirectory": "artifacts/finer-build/dist",
+  "framework": null,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
