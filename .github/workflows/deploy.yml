@@ -26,12 +26,13 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: pnpm
+          node-version: 22
 
-      - run: pnpm install --ignore-scripts --no-frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --ignore-scripts --no-frozen-lockfile
 
-      - run: pnpm --filter @workspace/finer-build build
+      - name: Build finer-build
+        run: pnpm --filter @workspace/finer-build build
         env:
           NODE_ENV: production
           PORT: "3000"
