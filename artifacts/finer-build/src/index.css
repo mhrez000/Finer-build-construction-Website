@@ -47,45 +47,45 @@
 }
 
 :root {
-  /* Warm Alabaster */
-  --background: 36 21% 97%;
-  /* Rich Charcoal */
-  --foreground: 0 0% 10%;
-  
-  /* Pale Taupe */
-  --muted: 32 23% 90%;
-  /* Warm Grey */
-  --muted-foreground: 33 5% 41%;
-  
-  /* Rich Charcoal */
-  --card: 36 21% 97%;
-  --card-foreground: 0 0% 10%;
-  --card-border: 30 10% 88%;
-  
-  --popover: 36 21% 97%;
-  --popover-foreground: 0 0% 10%;
-  --popover-border: 30 10% 88%;
-  
-  /* Rich Charcoal for Primary Buttons */
-  --primary: 0 0% 10%;
-  --primary-foreground: 36 21% 97%;
-  
-  /* Pale Taupe for Secondary */
-  --secondary: 32 23% 90%;
-  --secondary-foreground: 0 0% 10%;
-  
-  /* Metallic Gold */
-  --accent: 46 65% 52%;
+  /* Warm Cream — richer than alabaster, like natural linen paper */
+  --background: 30 30% 94%;
+  /* Warm Charcoal — brown undertone, like aged timber */
+  --foreground: 30 10% 10%;
+
+  /* Warm Taupe — deeper, earthier muted surface */
+  --muted: 28 25% 87%;
+  /* Warm Stone — natural stone grey with warmth */
+  --muted-foreground: 25 8% 40%;
+
+  /* Cards match background warmth */
+  --card: 30 30% 94%;
+  --card-foreground: 30 10% 10%;
+  --card-border: 28 18% 84%;
+
+  --popover: 30 30% 94%;
+  --popover-foreground: 30 10% 10%;
+  --popover-border: 28 18% 84%;
+
+  /* Warm Charcoal for Primary Buttons */
+  --primary: 30 10% 10%;
+  --primary-foreground: 30 30% 94%;
+
+  /* Warm Taupe for Secondary */
+  --secondary: 28 25% 87%;
+  --secondary-foreground: 30 10% 10%;
+
+  /* Metallic Gold — slightly warmer to match earthtone palette */
+  --accent: 43 60% 50%;
   --accent-foreground: 0 0% 100%;
-  
+
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
-  
-  /* Subtle borders at ~15% opacity of foreground equivalent */
-  --border: 30 10% 88%;
-  --input: 30 10% 88%;
-  --ring: 46 65% 52%;
-  
+
+  /* Warm borders — subtle tan, like unbleached paper edges */
+  --border: 28 18% 84%;
+  --input: 28 18% 84%;
+  --ring: 43 60% 50%;
+
   --radius: 0px;
 }
 
@@ -115,9 +115,9 @@
     pointer-events: none;
     z-index: 39;
     background-image: linear-gradient(to right,
-      transparent 24.9%, rgba(26, 26, 26, 0.12) 25%, transparent 25.1%,
-      transparent 49.9%, rgba(26, 26, 26, 0.12) 50%, transparent 50.1%,
-      transparent 74.9%, rgba(26, 26, 26, 0.12) 75%, transparent 75.1%
+      transparent 24.9%, rgba(28, 25, 23, 0.10) 25%, transparent 25.1%,
+      transparent 49.9%, rgba(28, 25, 23, 0.10) 50%, transparent 50.1%,
+      transparent 74.9%, rgba(28, 25, 23, 0.10) 75%, transparent 75.1%
     );
   }
 
