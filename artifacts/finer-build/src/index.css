@@ -107,20 +107,6 @@
     @apply font-serif font-normal tracking-tight;
   }
 
-  /* Architectural Grid Lines */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 39;
-    background-image: linear-gradient(to right,
-      transparent 24.9%, rgba(28, 25, 23, 0.10) 25%, transparent 25.1%,
-      transparent 49.9%, rgba(28, 25, 23, 0.10) 50%, transparent 50.1%,
-      transparent 74.9%, rgba(28, 25, 23, 0.10) 75%, transparent 75.1%
-    );
-  }
-
   /* Subtle Paper Noise Texture */
   body::after {
     content: "";
