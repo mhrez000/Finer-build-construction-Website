@@ -4,7 +4,41 @@ import { Button } from "@/components/ui/button";
 import { SpinningBorder } from "@/components/ui/SpinningBorder";
 import { ProjectCard } from "@/components/ProjectCard";
 import { HouseFrameBuilder } from "@/components/HouseFrameBuilder";
+import { CoverflowCarousel } from "@/components/CoverflowCarousel";
 import { Link } from "wouter";
+
+const FEATURED_PROJECTS = [
+  {
+    title: "Hawthorne Deck & Pergola",
+    description: "A stunning outdoor entertainment space built from premium hardwood decking, creating a seamless indoor-outdoor flow.",
+    category: "Outdoor Living",
+    image: "https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?q=80&w=2940&auto=format&fit=crop",
+  },
+  {
+    title: "Mosman Renovation",
+    description: "Full interior renovation and structural update of a heritage-listed terrace home, blending classic character with modern luxury.",
+    category: "Renovation",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2950&auto=format&fit=crop",
+  },
+  {
+    title: "Double Bay New Build",
+    description: "Custom stick-framed 4-bedroom family home featuring complex architectural rooflines and extensive bespoke joinery.",
+    category: "New Build",
+    image: "https://images.unsplash.com/photo-1541888081696-2713f0190ce2?q=80&w=2952&auto=format&fit=crop",
+  },
+  {
+    title: "Bondi Extension",
+    description: "Two-storey residential extension increasing living space by 60sqm with complex stick framing integrating seamlessly with the 1920s structure.",
+    category: "Extension",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2940&auto=format&fit=crop",
+  },
+  {
+    title: "Neutral Bay Prefab Frame",
+    description: "Rapid pre-fab frame installation for a multi-unit luxury development, cutting framing schedule by 30% while maintaining absolute precision.",
+    category: "Pre-Fab Framing",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2831&auto=format&fit=crop",
+  },
+];
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight, CheckCircle2, ShieldCheck, Ruler, Home as HomeIcon, Hammer, Wrench } from "lucide-react";
 
@@ -265,11 +299,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="section-padding bg-foreground text-background">
+      {/* Featured Projects — Coverflow Carousel */}
+      <section className="section-padding bg-foreground text-background overflow-hidden">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12">
           <motion.div
-            className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20"
+            className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -296,43 +330,9 @@ export default function Home() {
               </Link>
             </motion.div>
           </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <motion.div variants={fadeUp}>
-              <ProjectCard
-                title="Hawthorne Deck & Pergola"
-                description="A stunning outdoor entertainment space built from premium hardwood decking, creating a seamless indoor-outdoor flow."
-                category="Outdoor Living"
-                // outdoor hardwood deck with modern pergola
-                imageUrl="https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?q=80&w=2940&auto=format&fit=crop"
-              />
-            </motion.div>
-            <motion.div variants={fadeUp}>
-              <ProjectCard
-                title="Mosman Renovation"
-                description="Full interior renovation and structural update of a heritage-listed terrace home, blending classic character with modern luxury."
-                category="Renovation"
-                // modern interior renovation home
-                imageUrl="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2950&auto=format&fit=crop"
-              />
-            </motion.div>
-            <motion.div variants={fadeUp}>
-              <ProjectCard
-                title="Double Bay New Build"
-                description="Custom stick-framed 4-bedroom family home featuring complex architectural rooflines and extensive bespoke joinery."
-                category="New Build"
-                // new construction modern timber framing
-                imageUrl="https://images.unsplash.com/photo-1541888081696-2713f0190ce2?q=80&w=2952&auto=format&fit=crop"
-              />
-            </motion.div>
-          </motion.div>
         </div>
+
+        <CoverflowCarousel items={FEATURED_PROJECTS} />
       </section>
 
       {/* Testimonial */}
