@@ -2,6 +2,7 @@ import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { CursorTrail } from "@/components/CursorTrail";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import About from "@/pages/about";
@@ -32,6 +33,7 @@ function App() {
           <Router />
         </WouterRouter>
         <Toaster />
+        <CursorTrail />
       </TooltipProvider>
     </QueryClientProvider>
   );
