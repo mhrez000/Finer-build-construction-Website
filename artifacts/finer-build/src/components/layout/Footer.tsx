@@ -10,7 +10,7 @@ export function Footer() {
             Finer Build
           </span>
           <p className="text-muted text-sm leading-relaxed max-w-sm">
-            Building your vision, one frame at a time. Defining excellence in residential construction across Greater Melbourne.
+            Crafting your vision, one frame at a time. Defining excellence in residential carpentry across Greater Melbourne.
           </p>
         </div>
 

@@ -39,7 +39,7 @@ export default function Services() {
         <div className="max-w-[1600px] mx-auto px-6 md:px-12">
           <SectionLabel>Capabilities</SectionLabel>
           <h1 className="text-5xl md:text-7xl font-serif max-w-4xl leading-[1.1]">
-            Comprehensive residential <span className="italic text-muted-foreground">building solutions.</span>
+            Comprehensive residential <span className="italic text-accent">carpentry solutions.</span>
           </h1>
         </div>
       </section>

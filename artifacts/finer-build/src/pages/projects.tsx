@@ -49,7 +49,7 @@ export default function Projects() {
           <div>
             <SectionLabel>Portfolio</SectionLabel>
             <h1 className="text-5xl md:text-7xl font-serif leading-[1.1]">
-              Selected <span className="italic text-muted-foreground">Works.</span>
+              Selected <span className="italic text-accent">Works.</span>
             </h1>
           </div>
           <p className="max-w-md text-muted-foreground">

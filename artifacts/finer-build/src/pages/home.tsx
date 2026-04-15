@@ -58,6 +58,9 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background" />
+          <span className="vertical-text absolute top-1/2 -translate-y-1/2 right-8 text-[0.6rem] tracking-[0.3em] uppercase text-foreground/30 font-semibold hidden lg:block">
+            Finer Build / Carpentry
+          </span>
         </div>
 
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full relative z-10">
@@ -75,7 +78,7 @@ export default function Home() {
               className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-serif text-foreground leading-[1.1] mb-8"
             >
               Crafting Homes.<br />
-              <span className="text-muted-foreground italic">Defining</span><br />
+              <span className="italic text-accent">Defining</span><br />
               Excellence.
             </motion.h1>
             <motion.p
@@ -109,7 +112,7 @@ export default function Home() {
             viewport={{ once: true, amount: 0.4 }}
           >
             {[
-              { icon: ShieldCheck, label: "Fully Licensed", sub: "NSW Builder" },
+              { icon: ShieldCheck, label: "Fully Licensed", sub: "VIC Carpenter" },
               { icon: CheckCircle2, label: "Fully Insured", sub: "Comprehensive coverage" },
               { icon: Ruler, label: "10+ Years", sub: "Industry experience" },
               { icon: HomeIcon, label: "Australian Standards", sub: "Exceeding requirements" }

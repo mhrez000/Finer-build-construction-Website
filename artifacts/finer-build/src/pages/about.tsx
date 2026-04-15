@@ -12,27 +12,29 @@ export default function About() {
         <div className="max-w-[1600px] mx-auto px-6 md:px-12">
           <SectionLabel>Our Story</SectionLabel>
           <h1 className="text-5xl md:text-7xl font-serif max-w-4xl leading-[1.1]">
-            Built on a foundation of <span className="italic text-muted-foreground">trust</span> and craftsmanship.
+            Built on a foundation of <span className="italic text-accent">trust</span> and craftsmanship.
           </h1>
         </div>
       </section>
 
       <section className="section-padding">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-          <div className="cinematic-image-container aspect-[3/4] w-full max-w-xl">
-            {/* builder carpenter working with timber */}
-            <img 
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2940&auto=format&fit=crop" 
-              alt="Carpenter working" 
+          <div className="cinematic-image-container aspect-[3/4] w-full max-w-xl relative">
+            <img
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2940&auto=format&fit=crop"
+              alt="Carpenter working"
               className="cinematic-image"
             />
+            <span className="vertical-text absolute top-1/2 -translate-y-1/2 right-4 text-[0.6rem] tracking-[0.3em] uppercase text-background/50 font-semibold hidden md:block">
+              Finer Build / Est. 2014
+            </span>
           </div>
           
           <div className="flex flex-col justify-center max-w-xl">
             <h2 className="text-3xl md:text-4xl font-serif mb-8">Over a decade of redefining residential spaces in Melbourne.</h2>
             <div className="space-y-6 text-muted-foreground leading-relaxed">
-              <p>
-                Finer Build Construction was founded with a singular vision: to bring unparalleled precision and structural integrity to the residential building sector. Based in Greater Melbourne, we have spent over 10 years mastering the complexities of modern framing, renovations, and outdoor construction.
+              <p className="drop-cap">
+                Finer Build Construction was founded with a singular vision: to bring unparalleled precision and structural integrity to the residential carpentry sector. Based in Greater Melbourne, we have spent over 10 years mastering the complexities of modern framing, renovations, and outdoor construction.
               </p>
               <p>
                 We believe that the unseen elements of a home—the studs, the joists, the structural beams—are just as critical as the final finishes. A truly luxurious home requires a perfect skeleton.

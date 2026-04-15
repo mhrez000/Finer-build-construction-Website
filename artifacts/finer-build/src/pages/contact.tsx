@@ -75,7 +75,7 @@ export default function Contact() {
         <div className="max-w-[1600px] mx-auto px-6 md:px-12">
           <SectionLabel>Get in Touch</SectionLabel>
           <h1 className="text-5xl md:text-7xl font-serif leading-[1.1]">
-            Start your <span className="italic text-muted-foreground">project.</span>
+            Start your <span className="italic text-accent">project.</span>
           </h1>
         </div>
       </section>

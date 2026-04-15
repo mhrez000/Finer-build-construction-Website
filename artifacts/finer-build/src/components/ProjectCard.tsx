@@ -28,7 +28,7 @@ export function ProjectCard({ title, description, imageUrl, category }: ProjectC
               rest: { scale: 1 },
               hover: { scale: 1.08 },
             }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
           />
           <motion.div
             className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent pointer-events-none"
