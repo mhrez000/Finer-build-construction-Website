@@ -1,6 +1,6 @@
 import { PageWrapper } from "@/components/layout/PageWrapper";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { ProjectCard } from "@/components/ProjectCard";
+import { CoverflowCarousel } from "@/components/CoverflowCarousel";
 
 const PROJECTS = [
   {
@@ -58,20 +58,8 @@ export default function Projects() {
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12">
-            {PROJECTS.map((project, idx) => (
-              <ProjectCard 
-                key={idx}
-                title={project.title}
-                description={project.description}
-                category={project.category}
-                imageUrl={project.image}
-              />
-            ))}
-          </div>
-        </div>
+      <section className="section-padding overflow-hidden">
+        <CoverflowCarousel items={PROJECTS} />
       </section>
     </PageWrapper>
   );
