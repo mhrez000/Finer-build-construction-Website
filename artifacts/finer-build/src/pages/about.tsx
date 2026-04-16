@@ -21,8 +21,8 @@ export default function About() {
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           <div className="cinematic-image-container aspect-[3/4] w-full max-w-xl relative">
             <img
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2940&auto=format&fit=crop"
-              alt="Carpenter working"
+              src={`${import.meta.env.BASE_URL}Homescreen2.jpg`}
+              alt="Finer Build Construction project"
               className="cinematic-image"
             />
             <span className="vertical-text absolute top-1/2 -translate-y-1/2 right-4 text-[0.6rem] tracking-[0.3em] uppercase text-background/50 font-semibold hidden md:block">
