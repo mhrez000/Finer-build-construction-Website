@@ -359,8 +359,8 @@ export default function Home() {
                 transition={{ duration: 1.6, ease: EASE, delay: 0.2 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2940&auto=format&fit=crop"
-                  alt="Bespoke kitchen joinery"
+                  src={`${import.meta.env.BASE_URL}homescreen3.jpg`}
+                  alt="Finer Build inclusions"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </motion.div>
