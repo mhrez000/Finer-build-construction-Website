@@ -6,9 +6,9 @@ Each project has its own folder. Drop images into the folder for that project.
 
 ```
 projects/
-├── reno/        ← Hawthorne Deck & Pergola
-├── Decking/       ← Bondi Extension
-├── mosman-renovation/     ← Mosman Renovation
+├── deck/                  ← Deck & Pergola
+├── renovation/            ← Renovation
+├── bondi-extension/       ← Bondi Extension
 ├── double-bay/            ← Double Bay New Build
 ├── neutral-bay/           ← Neutral Bay Prefab Frame
 └── kirribilli-pergola/    ← Kirribilli Pergola
