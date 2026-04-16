@@ -44,7 +44,7 @@ export function Navigation() {
             <img
               src={`${import.meta.env.BASE_URL}logo.png`}
               alt="Finer Build Construction"
-              className="h-10 md:h-12 w-auto"
+              className="h-16 md:h-20 lg:h-24 w-auto mix-blend-multiply"
             />
           </Link>
 
