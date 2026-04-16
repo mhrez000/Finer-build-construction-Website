@@ -94,6 +94,7 @@ export default function Home() {
               loop
               muted
               playsInline
+              preload="auto"
               poster={`${import.meta.env.BASE_URL}hero-poster.jpg`}
               className="absolute inset-0 w-full h-full object-cover"
               aria-hidden="true"
