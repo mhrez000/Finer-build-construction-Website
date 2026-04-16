@@ -218,8 +218,8 @@ export default function Home() {
             >
               <div className="rounded-2xl overflow-hidden aspect-[4/5]">
                 <img
-                  src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop"
-                  alt="Heritage renovation"
+                  src={`${import.meta.env.BASE_URL}Home-screen1.jpg`}
+                  alt="Modern Finer Build home"
                   className="w-full h-full object-cover transition-transform duration-[2000ms] hover:scale-105"
                 />
               </div>
