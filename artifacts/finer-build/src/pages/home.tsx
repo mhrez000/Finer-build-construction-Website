@@ -117,7 +117,7 @@ export default function Home() {
 
             {/* Text content overlay */}
             <motion.div
-              className="relative z-10 flex flex-col justify-between p-10 md:p-16 lg:p-20 min-h-[600px] md:min-h-[680px] max-w-2xl"
+              className="relative z-10 flex flex-col justify-between p-10 md:p-16 lg:p-20 min-h-[600px] md:min-h-[680px] max-w-md md:max-w-lg lg:max-w-xl"
               variants={staggerContainer}
               initial="hidden"
               animate="visible"
@@ -131,11 +131,11 @@ export default function Home() {
               <div>
                 <motion.h1
                   variants={fadeUp}
-                  className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif leading-[1.05] mb-8"
+                  className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-serif leading-[1.05] mb-8"
                 >
                   Set New Standards<br />
-                  in <span className="italic text-accent">Modern Home</span><br />
-                  Construction
+                  in <span className="italic text-accent">Modern</span><br />
+                  Home Construction
                 </motion.h1>
 
                 <motion.p
