@@ -40,13 +40,12 @@ export function Navigation() {
         )}
       >
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
-          <Link href="/" className="group flex flex-col items-start leading-none">
-            <span className="font-serif text-2xl tracking-widest uppercase text-foreground">
-              Finer Build
-            </span>
-            <span className="text-[0.55rem] tracking-[0.4em] uppercase text-muted-foreground mt-1">
-              Construction
-            </span>
+          <Link href="/" className="group flex items-center" aria-label="Finer Build Construction home">
+            <img
+              src={`${import.meta.env.BASE_URL}logo.png`}
+              alt="Finer Build Construction"
+              className="h-10 md:h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
