@@ -83,79 +83,88 @@ export default function Home() {
       <section className="pt-32 md:pt-36 pb-12 md:pb-20">
         <div className="max-w-[1600px] mx-auto px-4 md:px-8">
           <motion.div
-            className="relative overflow-hidden rounded-3xl bg-foreground text-background"
+            className="relative overflow-hidden rounded-3xl bg-foreground text-background min-h-[600px] md:min-h-[680px]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, ease: EASE }}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] md:min-h-[600px]">
-              {/* Left — text */}
-              <motion.div
-                className="flex flex-col justify-between p-10 md:p-16 lg:p-20"
-                variants={staggerContainer}
-                initial="hidden"
-                animate="visible"
-              >
-                <motion.div variants={fadeUpSmall}>
-                  <span className="inline-block text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-accent border border-accent/40 rounded-full px-4 py-2">
-                    Crafting Tomorrow's Living Spaces
-                  </span>
+            {/* Full-width background video */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster={`${import.meta.env.BASE_URL}hero-poster.jpg`}
+              className="absolute inset-0 w-full h-full object-cover"
+              aria-hidden="true"
+            >
+              <source
+                src={`${import.meta.env.BASE_URL}hero-video.mp4`}
+                type="video/mp4"
+              />
+              {/* Fallback image if video doesn't load */}
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2940&auto=format&fit=crop"
+                alt="Modern home construction"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </video>
+
+            {/* Dark overlay for text legibility */}
+            <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/60 to-foreground/20 lg:from-foreground/85 lg:via-foreground/40 lg:to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-foreground/30" />
+
+            {/* Text content overlay */}
+            <motion.div
+              className="relative z-10 flex flex-col justify-between p-10 md:p-16 lg:p-20 min-h-[600px] md:min-h-[680px] max-w-2xl"
+              variants={staggerContainer}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.div variants={fadeUpSmall}>
+                <span className="inline-block text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-accent border border-accent/40 rounded-full px-4 py-2">
+                  Crafting Tomorrow's Living Spaces
+                </span>
+              </motion.div>
+
+              <div>
+                <motion.h1
+                  variants={fadeUp}
+                  className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif leading-[1.05] mb-8"
+                >
+                  Set New Standards<br />
+                  in <span className="italic text-accent">Modern Home</span><br />
+                  Construction
+                </motion.h1>
+
+                <motion.p
+                  variants={fadeUp}
+                  className="text-base md:text-lg text-background/80 max-w-md mb-10 leading-relaxed"
+                >
+                  Premium residential carpentry, renovations, and architectural framing — built across Greater Melbourne with unyielding precision.
+                </motion.p>
+
+                <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
+                  <Link href="/contact">
+                    <Button
+                      size="default"
+                      className="rounded-full bg-black text-background hover:bg-black/80 px-7"
+                    >
+                      Get in touch
+                    </Button>
+                  </Link>
+                  <Link href="/projects">
+                    <Button
+                      variant="outline"
+                      size="default"
+                      className="rounded-full border-background/30 text-background hover:bg-background hover:text-foreground px-7"
+                    >
+                      View Portfolio
+                    </Button>
+                  </Link>
                 </motion.div>
-
-                <div>
-                  <motion.h1
-                    variants={fadeUp}
-                    className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif leading-[1.05] mb-8 mt-12 md:mt-0"
-                  >
-                    Set New Standards<br />
-                    in <span className="italic text-accent">Modern Home</span><br />
-                    Construction
-                  </motion.h1>
-
-                  <motion.p
-                    variants={fadeUp}
-                    className="text-base md:text-lg text-background/70 max-w-md mb-10 leading-relaxed"
-                  >
-                    Premium residential carpentry, renovations, and architectural framing — built across Greater Melbourne with unyielding precision.
-                  </motion.p>
-
-                  <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
-                    <Link href="/contact">
-                      <Button
-                        size="default"
-                        className="rounded-full bg-black text-background hover:bg-black/80 px-7"
-                      >
-                        Get in touch
-                      </Button>
-                    </Link>
-                    <Link href="/projects">
-                      <Button
-                        variant="outline"
-                        size="default"
-                        className="rounded-full border-background/30 text-background hover:bg-background hover:text-foreground px-7"
-                      >
-                        View Portfolio
-                      </Button>
-                    </Link>
-                  </motion.div>
-                </div>
-              </motion.div>
-
-              {/* Right — image */}
-              <motion.div
-                className="relative overflow-hidden min-h-[300px] lg:min-h-full"
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.6, ease: EASE, delay: 0.2 }}
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2940&auto=format&fit=crop"
-                  alt="Modern home construction"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-foreground/50 via-transparent to-transparent lg:bg-none" />
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
