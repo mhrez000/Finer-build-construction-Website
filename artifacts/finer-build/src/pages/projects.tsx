@@ -40,28 +40,25 @@ const PROJECTS = [
     ],
   },
   {
-    title: "Bondi Extension",
-    description: "Two-storey residential extension increasing living space by 60sqm. Complex stick framing required to integrate with the existing 1920s structure seamlessly.",
-    category: "Extension",
-    images: ["https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2940&auto=format&fit=crop"],
-  },
-  {
-    title: "Double Bay New Build",
-    description: "Custom stick-framed 4-bedroom family home featuring complex architectural rooflines, exposed structural beams, and extensive bespoke joinery framing.",
+    title: "New Build",
+    description: "Custom stick-framed family homes featuring complex architectural rooflines, exposed structural beams, and extensive bespoke joinery throughout.",
     category: "New Build",
-    images: ["https://images.unsplash.com/photo-1541888081696-2713f0190ce2?q=80&w=2952&auto=format&fit=crop"],
+    images: [
+      `${B}projects/new-build/Finer Build.jpg`,
+      `${B}projects/new-build/Finer Build(2).jpg`,
+      `${B}projects/new-build/Finer Build(7).jpg`,
+    ],
   },
   {
-    title: "Neutral Bay Prefab Frame",
-    description: "Rapid pre-fab frame installation for a multi-unit luxury development, cutting framing schedule by 30% while maintaining absolute precision.",
-    category: "Pre-Fab Framing",
-    images: ["https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2831&auto=format&fit=crop"],
-  },
-  {
-    title: "Kirribilli Pergola",
-    description: "Elegant freestanding structural pergola for an outdoor dining area, featuring precision-cut joints and marine-grade fixings suited for the harbour environment.",
-    category: "Outdoor Living",
-    images: ["https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2940&auto=format&fit=crop"],
+    title: "New Home",
+    description: "Modern residential homes designed and framed by Finer Build — every stud, joist, and roof line crafted to architectural precision.",
+    category: "New Home",
+    images: [
+      `${B}projects/new-home/New Home.jpg`,
+      `${B}projects/new-home/New Home(1).jpg`,
+      `${B}projects/new-home/New Home(2).jpg`,
+      `${B}projects/new-home/New Home(3).jpg`,
+    ],
   },
 ];
 
