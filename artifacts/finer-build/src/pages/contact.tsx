@@ -218,11 +218,10 @@ export default function Contact() {
                   )}
                 />
 
-                <Button 
-                  type="submit" 
-                  variant="gold" 
-                  size="lg" 
-                  className="w-full mt-4"
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full mt-4 rounded-full"
                   disabled={mutation.isPending}
                 >
                   {mutation.isPending ? "Sending..." : "Submit Inquiry"}

@@ -119,17 +119,20 @@ export default function Home() {
                     Premium residential carpentry, renovations, and architectural framing — built across Greater Melbourne with unyielding precision.
                   </motion.p>
 
-                  <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
+                  <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
                     <Link href="/contact">
-                      <Button variant="gold" size="lg" className="rounded-full">
+                      <Button
+                        size="default"
+                        className="rounded-full bg-black text-background hover:bg-black/80 px-7"
+                      >
                         Get in touch
                       </Button>
                     </Link>
                     <Link href="/projects">
                       <Button
                         variant="outline"
-                        size="lg"
-                        className="rounded-full border-background/30 text-background hover:bg-background hover:text-foreground"
+                        size="default"
+                        className="rounded-full border-background/30 text-background hover:bg-background hover:text-foreground px-7"
                       >
                         View Portfolio
                       </Button>
@@ -243,7 +246,10 @@ export default function Home() {
 
               <motion.div variants={fadeUp}>
                 <Link href="/contact">
-                  <Button variant="gold" size="lg" className="rounded-full">
+                  <Button
+                    size="default"
+                    className="rounded-full px-7"
+                  >
                     Get in touch
                   </Button>
                 </Link>
@@ -323,9 +329,8 @@ export default function Home() {
                 >
                   <Link href="/services">
                     <Button
-                      variant="outline"
-                      size="lg"
-                      className="rounded-full border-background/30 text-background hover:bg-background hover:text-foreground"
+                      size="default"
+                      className="rounded-full bg-black text-background hover:bg-black/80 px-7"
                     >
                       View Inclusions
                     </Button>
@@ -408,7 +413,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link href="/services">
-              <Button variant="outline" className="rounded-full gap-2">
+              <Button className="rounded-full gap-2 px-7">
                 All Services <ArrowRight size={16} />
               </Button>
             </Link>
@@ -523,9 +528,8 @@ export default function Home() {
                 <motion.div variants={fadeUp}>
                   <Link href="/projects">
                     <Button
-                      variant="outline"
-                      size="lg"
-                      className="rounded-full border-background/30 text-background hover:bg-background hover:text-foreground"
+                      size="default"
+                      className="rounded-full bg-black text-background hover:bg-black/80 px-7"
                     >
                       View All Projects
                     </Button>

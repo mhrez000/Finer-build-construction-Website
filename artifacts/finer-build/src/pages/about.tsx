@@ -83,9 +83,7 @@ export default function About() {
       <section className="py-32 text-center">
         <h2 className="text-3xl md:text-4xl font-serif mb-8">Ready to discuss your vision?</h2>
         <Link href="/contact">
-          <SpinningBorder>
-            <Button variant="gold" size="lg">Start a Conversation</Button>
-          </SpinningBorder>
+          <Button size="lg" className="rounded-full px-8">Start a Conversation</Button>
         </Link>
       </section>
     </PageWrapper>

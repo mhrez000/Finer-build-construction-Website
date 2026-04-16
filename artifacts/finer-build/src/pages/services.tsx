@@ -64,7 +64,7 @@ export default function Services() {
                 {service.description}
               </p>
               <Link href="/contact" className="w-fit">
-                <Button variant="outline">Enquire about this service</Button>
+                <Button className="rounded-full px-7">Enquire about this service</Button>
               </Link>
             </div>
           </div>
@@ -77,9 +77,7 @@ export default function Services() {
           We handle a wide variety of bespoke residential construction requirements. Contact us to discuss your specific project needs.
         </p>
         <Link href="/contact">
-          <SpinningBorder>
-            <Button variant="gold" size="lg">Contact Us</Button>
-          </SpinningBorder>
+          <Button size="lg" className="rounded-full px-8">Contact Us</Button>
         </Link>
       </section>
     </PageWrapper>
