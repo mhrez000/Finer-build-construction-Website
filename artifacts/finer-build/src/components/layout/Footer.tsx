@@ -7,7 +7,7 @@ export function Footer() {
         
         <div className="flex flex-col gap-6 lg:col-span-1">
           <img
-            src={`${import.meta.env.BASE_URL}logo.jpg`}
+            src={`${import.meta.env.BASE_URL}logo.png`}
             alt="Finer Build Construction"
             className="h-14 w-auto brightness-0 invert"
           />

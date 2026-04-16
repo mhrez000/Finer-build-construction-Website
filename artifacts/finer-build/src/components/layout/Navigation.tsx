@@ -42,9 +42,9 @@ export function Navigation() {
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
           <Link href="/" className="group flex items-center" aria-label="Finer Build Construction home">
             <img
-              src={`${import.meta.env.BASE_URL}logo.jpg`}
+              src={`${import.meta.env.BASE_URL}logo.png`}
               alt="Finer Build Construction"
-              className="h-10 md:h-12 w-auto mix-blend-multiply"
+              className="h-10 md:h-12 w-auto"
             />
           </Link>
 
