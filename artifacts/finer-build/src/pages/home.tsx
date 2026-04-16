@@ -1,7 +1,6 @@
 import { PageWrapper } from "@/components/layout/PageWrapper";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/button";
-import { HouseFrameBuilder } from "@/components/HouseFrameBuilder";
 import { CoverflowCarousel } from "@/components/CoverflowCarousel";
 import { Link } from "wouter";
 import { motion, type Variants } from "framer-motion";
@@ -457,77 +456,6 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* ── The Craft — animated house frame builder ─────────── */}
-      <section className="py-12 md:py-20">
-        <div className="max-w-[1600px] mx-auto px-4 md:px-8">
-          <motion.div
-            className="relative overflow-hidden rounded-3xl bg-muted/40 px-8 md:px-16 py-16 md:py-24"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1.0, ease: EASE }}
-          >
-            <motion.div
-              className="max-w-2xl mb-12 md:mb-16"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-            >
-              <motion.div variants={fadeUpSmall}>
-                <SectionLabel>The Craft</SectionLabel>
-              </motion.div>
-              <motion.h2
-                variants={fadeUp}
-                className="text-3xl md:text-5xl lg:text-6xl font-serif text-balance mb-6"
-              >
-                Precision, from foundation to <span className="italic text-accent">ridge beam</span>.
-              </motion.h2>
-              <motion.p
-                variants={fadeUp}
-                className="text-muted-foreground leading-relaxed max-w-xl"
-              >
-                Every Finer Build Construction home begins the same way: a poured foundation, measured twice. Then stud by stud, plate by plate, rafter by rafter, the structure rises — each member true, square, and engineered to outlast the brief.
-              </motion.p>
-            </motion.div>
-
-            <motion.div
-              className="relative mx-auto max-w-5xl"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 1.0, ease: EASE }}
-            >
-              <HouseFrameBuilder />
-            </motion.div>
-
-            <motion.div
-              className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.4 }}
-            >
-              {[
-                { value: "150+", label: "Homes Framed" },
-                { value: "10yr", label: "Workmanship" },
-                { value: "100%", label: "On Schedule" },
-                { value: "AS1684", label: "Compliant" },
-              ].map((stat, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeUpSmall}
-                  className="flex flex-col items-center text-center gap-2"
-                >
-                  <span className="text-3xl md:text-4xl font-serif text-accent">{stat.value}</span>
-                  <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">{stat.label}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
         </div>
       </section>
 
