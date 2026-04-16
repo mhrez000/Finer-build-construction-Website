@@ -117,7 +117,7 @@ export default function Home() {
 
             {/* Text content overlay — split top/bottom around the video logo */}
             <motion.div
-              className="relative z-10 flex flex-col justify-between p-10 md:p-16 lg:p-20 min-h-[600px] md:min-h-[680px]"
+              className="relative z-10 flex flex-col justify-between px-10 md:px-16 lg:px-20 pt-6 md:pt-8 lg:pt-10 pb-10 md:pb-16 lg:pb-20 min-h-[600px] md:min-h-[680px]"
               variants={staggerContainer}
               initial="hidden"
               animate="visible"
