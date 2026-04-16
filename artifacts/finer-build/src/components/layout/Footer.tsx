@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { Logo } from "@/components/Logo";
 
 export function Footer() {
   return (
@@ -6,11 +7,7 @@ export function Footer() {
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
         
         <div className="flex flex-col gap-6 lg:col-span-1">
-          <img
-            src={`${import.meta.env.BASE_URL}logo.png`}
-            alt="Finer Build Construction"
-            className="h-14 w-auto brightness-0 invert"
-          />
+          <Logo variant="light" size="lg" />
           <p className="text-muted text-sm leading-relaxed max-w-sm">
             Crafting your vision, one frame at a time. Defining excellence in residential carpentry across Greater Melbourne.
           </p>
