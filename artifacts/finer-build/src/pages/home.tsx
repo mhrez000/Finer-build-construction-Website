@@ -446,7 +446,7 @@ export default function Home() {
                 variants={fadeUp}
                 className="text-muted-foreground leading-relaxed max-w-xl"
               >
-                Every Finer Build home begins the same way: a poured foundation, measured twice. Then stud by stud, plate by plate, rafter by rafter, the structure rises — each member true, square, and engineered to outlast the brief.
+                Every Finer Build Construction home begins the same way: a poured foundation, measured twice. Then stud by stud, plate by plate, rafter by rafter, the structure rises — each member true, square, and engineered to outlast the brief.
               </motion.p>
             </motion.div>
 
@@ -556,7 +556,7 @@ export default function Home() {
               variants={fadeUp}
               className="text-2xl md:text-4xl font-serif leading-snug mb-10"
             >
-              "The attention to detail Finer Build brought to our renovation was extraordinary. Their team's craftsmanship turned our architectural plans into a reality that <span className="italic text-accent">exceeded</span> our expectations."
+              "The attention to detail Finer Build Construction brought to our renovation was extraordinary. Their team's craftsmanship turned our architectural plans into a reality that <span className="italic text-accent">exceeded</span> our expectations."
             </motion.p>
             <motion.div variants={fadeUpSmall} className="flex flex-col items-center gap-2">
               <span className="text-sm font-semibold tracking-widest uppercase">Sarah & James T.</span>

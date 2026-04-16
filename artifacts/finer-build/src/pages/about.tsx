@@ -26,7 +26,7 @@ export default function About() {
               className="cinematic-image"
             />
             <span className="vertical-text absolute top-1/2 -translate-y-1/2 right-4 text-[0.6rem] tracking-[0.3em] uppercase text-background/50 font-semibold hidden md:block">
-              Finer Build / Est. 2014
+              Finer Build Construction / Est. 2014
             </span>
           </div>
           
