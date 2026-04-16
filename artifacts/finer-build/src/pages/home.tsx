@@ -117,12 +117,12 @@ export default function Home() {
 
             {/* Text content overlay */}
             <motion.div
-              className="relative z-10 flex flex-col justify-between p-10 md:p-16 lg:p-20 min-h-[600px] md:min-h-[680px] max-w-md md:max-w-lg lg:max-w-xl"
+              className="relative z-10 flex flex-col justify-start p-10 md:p-16 lg:p-20 min-h-[600px] md:min-h-[680px] max-w-md md:max-w-lg lg:max-w-xl"
               variants={staggerContainer}
               initial="hidden"
               animate="visible"
             >
-              <motion.div variants={fadeUpSmall}>
+              <motion.div variants={fadeUpSmall} className="mb-8 md:mb-10">
                 <span className="inline-block text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-accent border border-accent/40 rounded-full px-4 py-2">
                   Crafting Tomorrow's Living Spaces
                 </span>
