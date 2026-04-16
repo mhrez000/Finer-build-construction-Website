@@ -115,36 +115,38 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/60 to-foreground/20 lg:from-foreground/85 lg:via-foreground/40 lg:to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-foreground/30" />
 
-            {/* Text content overlay */}
+            {/* Text content overlay — split top/bottom around the video logo */}
             <motion.div
-              className="relative z-10 flex flex-col justify-start p-10 md:p-16 lg:p-20 min-h-[600px] md:min-h-[680px] max-w-md md:max-w-lg lg:max-w-xl"
+              className="relative z-10 flex flex-col justify-between p-10 md:p-16 lg:p-20 min-h-[600px] md:min-h-[680px]"
               variants={staggerContainer}
               initial="hidden"
               animate="visible"
             >
-              <motion.div variants={fadeUpSmall} className="mb-8 md:mb-10">
-                <span className="inline-block text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-accent border border-accent/40 rounded-full px-4 py-2">
-                  Crafting Tomorrow's Living Spaces
-                </span>
-              </motion.div>
-
-              <div>
+              {/* Top group: chip + headline (above the video logo) */}
+              <div className="max-w-md md:max-w-lg lg:max-w-xl">
+                <motion.div variants={fadeUpSmall} className="mb-8 md:mb-10">
+                  <span className="inline-block text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-accent border border-accent/40 rounded-full px-4 py-2">
+                    Crafting Tomorrow's Living Spaces
+                  </span>
+                </motion.div>
                 <motion.h1
                   variants={fadeUp}
-                  className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-serif leading-[1.05] mb-8"
+                  className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-serif leading-[1.05]"
                 >
                   Set New Standards<br />
                   in <span className="italic text-accent">Modern</span><br />
                   Home Construction
                 </motion.h1>
+              </div>
 
+              {/* Bottom group: description + buttons (below the video logo) */}
+              <div className="max-w-md md:max-w-lg lg:max-w-xl">
                 <motion.p
                   variants={fadeUp}
-                  className="text-base md:text-lg text-background/80 max-w-md mb-10 leading-relaxed"
+                  className="text-base md:text-lg text-background/80 max-w-md mb-8 leading-relaxed"
                 >
                   Premium residential carpentry, renovations, and architectural framing — built across Greater Melbourne with unyielding precision.
                 </motion.p>
-
                 <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
                   <Link href="/contact">
                     <Button
