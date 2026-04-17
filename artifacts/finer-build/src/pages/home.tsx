@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CoverflowCarousel } from "@/components/CoverflowCarousel";
 import { Link } from "wouter";
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, CheckCircle2, ShieldCheck, Ruler, Home as HomeIcon, Hammer, Wrench } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Ruler, Home as HomeIcon, Hammer, Wrench, Package } from "lucide-react";
 
 // -------------------------------------------------------------
 // Data
@@ -417,7 +417,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -426,6 +426,7 @@ export default function Home() {
             {[
               { icon: Hammer, title: "Stick Built Framing", desc: "Custom on-site structural framing." },
               { icon: Wrench, title: "Pre-Fab Framing", desc: "Efficient, precision off-site manufacture." },
+              { icon: Package, title: "Material Supply", desc: "Premium materials sourced & delivered to site." },
               { icon: HomeIcon, title: "Renovations", desc: "Transforming existing residential spaces." },
               { icon: Ruler, title: "Decks & Pergolas", desc: "Premium outdoor entertainment areas." },
             ].map((srv, i) => (
