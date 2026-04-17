@@ -1,3 +1,15 @@
-<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="180" height="180" rx="36" fill="#FF3C00"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Finer Build Construction favicon — geometric house mark -->
+  <!-- Left roof face (darker, angled back) -->
+  <polygon points="4,38 28,12 32,38" fill="#1e293b" opacity="0.75"/>
+  <!-- Right roof face (primary, angled forward) -->
+  <polygon points="32,38 28,12 60,28" fill="#1e293b"/>
+  <!-- Front wall -->
+  <polygon points="32,38 60,28 60,58 32,58" fill="#1e293b"/>
+  <!-- Left wall (slightly lighter) -->
+  <polygon points="4,38 32,38 32,58 4,58" fill="#1e293b" opacity="0.85"/>
+  <!-- Door cutout -->
+  <rect x="14" y="44" width="10" height="14" fill="white"/>
+  <!-- Window -->
+  <rect x="40" y="36" width="8" height="8" fill="white" opacity="0.7"/>
 </svg>
