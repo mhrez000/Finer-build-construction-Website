@@ -82,8 +82,6 @@ export function Footer() {
           &copy; {new Date().getFullYear()} Finer Build Construction. All rights reserved.
         </p>
         <div className="flex items-center gap-6">
-          <span className="text-xs text-muted/60 hover:text-background cursor-pointer transition-colors">Privacy Policy</span>
-          <span className="text-xs text-muted/60 hover:text-background cursor-pointer transition-colors">Terms of Service</span>
           <a
             href="https://www.instagram.com/finerbuildconstruction/"
             target="_blank"
