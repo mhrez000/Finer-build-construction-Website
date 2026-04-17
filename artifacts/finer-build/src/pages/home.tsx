@@ -106,7 +106,7 @@ export default function Home() {
   return (
     <PageWrapper className="pt-0 md:pt-0">
       {/* ── Hero Card ────────────────────────────────────────── */}
-      <section className="pt-28 md:pt-36 pb-8 md:pb-20">
+      <section className="pt-24 md:pt-28 pb-8 md:pb-20">
         <div className="max-w-[1600px] mx-auto px-3 md:px-8">
           <motion.div
             className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-foreground text-background"
@@ -149,7 +149,7 @@ export default function Home() {
               animate="visible"
             >
               {/* Top group: chip + headline */}
-              <div className="max-w-sm md:max-w-lg lg:max-w-xl">
+              <div className="max-w-xs md:max-w-sm lg:max-w-md">
                 <motion.div variants={fadeUpSmall} className="mb-6 md:mb-10">
                   <span className="inline-block text-[0.55rem] md:text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-accent border border-accent/40 rounded-full px-3 md:px-4 py-1.5 md:py-2">
                     Crafting Tomorrow's Living Spaces
@@ -157,7 +157,7 @@ export default function Home() {
                 </motion.div>
                 <motion.h1
                   variants={fadeUp}
-                  className="text-3xl md:text-5xl lg:text-5xl xl:text-6xl font-serif leading-[1.05]"
+                  className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.05]"
                 >
                   Set New Standards<br />
                   in <span className="italic text-accent">Modern</span><br />
