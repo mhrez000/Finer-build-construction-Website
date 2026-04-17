@@ -5,70 +5,11 @@ import { CoverflowCarousel } from "@/components/CoverflowCarousel";
 import { Link } from "wouter";
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight, CheckCircle2, ShieldCheck, Ruler, Home as HomeIcon, Hammer, Wrench, Package } from "lucide-react";
+import { useSheetProjects } from "@/hooks/useSheetProjects";
 
 // -------------------------------------------------------------
 // Data
 // -------------------------------------------------------------
-const B = import.meta.env.BASE_URL;
-
-const FEATURED_PROJECTS = [
-  {
-    title: "Deck & Pergola",
-    description: "Custom hardwood decks and structural pergolas built across Melbourne — premium materials, precision joinery, designed for the Australian climate.",
-    category: "Outdoor Living",
-    images: [
-      `${B}projects/deck/IMG_0412.jpg`,
-      `${B}projects/deck/IMG_0563.jpg`,
-      `${B}projects/deck/IMG_0570.jpg`,
-      `${B}projects/deck/IMG_1842.jpg`,
-      `${B}projects/deck/IMG_2239.jpg`,
-      `${B}projects/deck/IMG_2521.jpg`,
-      `${B}projects/deck/IMG_9710.jpg`,
-      `${B}projects/deck/IMG_9747.jpg`,
-    ],
-  },
-  {
-    title: "Renovation",
-    description: "Full interior renovations and structural updates — blending heritage character with modern luxury through careful framing, joinery, and finishing.",
-    category: "Renovation",
-    images: [
-      `${B}projects/renovation/IMG_3376.jpg`,
-      `${B}projects/renovation/IMG_3381.jpg`,
-      `${B}projects/renovation/IMG_3421.jpg`,
-      `${B}projects/renovation/IMG_3798.jpg`,
-      `${B}projects/renovation/IMG_3799.jpg`,
-      `${B}projects/renovation/IMG_4302.jpg`,
-      `${B}projects/renovation/IMG_4304.jpg`,
-      `${B}projects/renovation/0b955fc1-5235-4ee2-9402-7d91d0ad5377.jpg`,
-      `${B}projects/renovation/6efc76da-2f95-4d23-9e3d-576362db9df5.jpg`,
-      `${B}projects/renovation/F90E2B8B-C1D8-429E-A24C-773CB2C6D2F6.jpg`,
-      `${B}projects/renovation/a27e338d-e945-4938-83a7-e92ac338536b.jpg`,
-      `${B}projects/renovation/a97f17bf-ecd2-4135-a308-b4c05171ff04.jpg`,
-    ],
-  },
-  {
-    title: "New Build",
-    description: "Custom stick-framed family homes featuring complex architectural rooflines, exposed structural beams, and extensive bespoke joinery throughout.",
-    category: "New Build",
-    images: [
-      `${B}projects/new-build/Finer Build.jpg`,
-      `${B}projects/new-build/Finer Build(2).jpg`,
-      `${B}projects/new-build/Finer Build(7).jpg`,
-    ],
-  },
-  {
-    title: "New Home",
-    description: "Modern residential homes designed and framed by Finer Build — every stud, joist, and roof line crafted to architectural precision.",
-    category: "New Home",
-    images: [
-      `${B}projects/new-home/New Home.jpg`,
-      `${B}projects/new-home/New Home(1).jpg`,
-      `${B}projects/new-home/New Home(2).jpg`,
-      `${B}projects/new-home/New Home(3).jpg`,
-    ],
-  },
-];
-
 const INCLUSIONS = [
   "Engineered timber framing to AS1684 standards",
   "Premium hardwood decking and joinery",
@@ -103,6 +44,8 @@ const fadeUpSmall: Variants = {
 };
 
 export default function Home() {
+  const { projects } = useSheetProjects();
+
   return (
     <PageWrapper className="pt-0 md:pt-0">
       {/* ── Hero Card ────────────────────────────────────────── */}
@@ -506,7 +449,7 @@ export default function Home() {
               </motion.div>
             </div>
 
-            <CoverflowCarousel items={FEATURED_PROJECTS} />
+            <CoverflowCarousel items={projects} />
           </motion.div>
         </div>
       </section>
