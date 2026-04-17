@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Logo } from "@/components/Logo";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -42,7 +41,11 @@ export function Navigation() {
       >
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
           <Link href="/" className="group" aria-label="Finer Build Construction home">
-            <Logo variant="dark" size="md" />
+            <img
+              src={`${import.meta.env.BASE_URL}fulllogo_transparent_nobuffer.png`}
+              alt="Finer Build Construction"
+              className="h-10 md:h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
