@@ -7,6 +7,11 @@ const B = import.meta.env.BASE_URL;
 
 const SERVICES = [
   {
+    title: "Material Supply",
+    description: "We source and supply premium construction materials directly to your site — from certified structural timber and engineered beams to premium hardwood decking, fixings, and hardware. Our established industry relationships mean trade-competitive pricing, reliable availability, and every material fully compliant with Australian building standards.",
+    image: `${B}services/material-supply/Materialsupplyimage.png`,
+  },
+  {
     title: "Stick Built Framing",
     description: "The traditional method of constructing homes piece by piece on site. Ideal for custom architectural designs with unique structural requirements, complex rooflines, or difficult site access. Our carpenters are masters of precision timber framing.",
     image: `${B}projects/new-build/Finer Build.jpg`,
@@ -15,11 +20,6 @@ const SERVICES = [
     title: "Pre-Fab Framing",
     description: "Managing the rapid installation of off-site manufactured frames and trusses. This method ensures consistent quality in a controlled environment and significantly reduces on-site construction time, perfect for modern residential developments.",
     image: `${B}services/prefab-framing/Prefabframingimage.png`,
-  },
-  {
-    title: "Material Supply",
-    description: "We source and supply premium construction materials directly to your site — from certified structural timber and engineered beams to premium hardwood decking, fixings, and hardware. Our established industry relationships mean trade-competitive pricing, reliable availability, and every material fully compliant with Australian building standards.",
-    image: `${B}services/material-supply/Materialsupplyimage.png`,
   },
   {
     title: "Renovations",

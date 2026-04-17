@@ -424,9 +424,9 @@ export default function Home() {
             viewport={{ once: true, amount: 0.2 }}
           >
             {[
+              { icon: Package, title: "Material Supply", desc: "Premium materials sourced & delivered to site." },
               { icon: Hammer, title: "Stick Built Framing", desc: "Custom on-site structural framing." },
               { icon: Wrench, title: "Pre-Fab Framing", desc: "Efficient, precision off-site manufacture." },
-              { icon: Package, title: "Material Supply", desc: "Premium materials sourced & delivered to site." },
               { icon: HomeIcon, title: "Renovations", desc: "Transforming existing residential spaces." },
               { icon: Ruler, title: "Decks & Pergolas", desc: "Premium outdoor entertainment areas." },
             ].map((srv, i) => (
