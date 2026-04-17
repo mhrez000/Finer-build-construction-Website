@@ -45,6 +45,34 @@ export function Footer() {
             Greater Melbourne & Surrounds<br/>
             Mon-Fri: 7am - 5pm
           </span>
+
+          {/* Social links */}
+          <div className="flex items-center gap-4 mt-6">
+            <a
+              href="https://www.instagram.com/finerbuildconstruction/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted hover:text-accent transition-colors duration-500"
+              aria-label="Follow us on Instagram"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="5" />
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+            <a
+              href="https://www.facebook.com/people/Finer-Build-Construction/61579014157616/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted hover:text-accent transition-colors duration-500"
+              aria-label="Follow us on Facebook"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -53,9 +81,33 @@ export function Footer() {
         <p className="text-xs text-muted/60 tracking-wider">
           &copy; {new Date().getFullYear()} Finer Build Construction. All rights reserved.
         </p>
-        <div className="flex gap-6">
+        <div className="flex items-center gap-6">
           <span className="text-xs text-muted/60 hover:text-background cursor-pointer transition-colors">Privacy Policy</span>
           <span className="text-xs text-muted/60 hover:text-background cursor-pointer transition-colors">Terms of Service</span>
+          <a
+            href="https://www.instagram.com/finerbuildconstruction/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted/60 hover:text-accent transition-colors duration-500"
+            aria-label="Instagram"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="5" />
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a
+            href="https://www.facebook.com/people/Finer-Build-Construction/61579014157616/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted/60 hover:text-accent transition-colors duration-500"
+            aria-label="Facebook"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
         </div>
       </div>
     </footer>
