@@ -35,8 +35,8 @@ export function Navigation() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out border-b border-transparent",
           isScrolled
-            ? "bg-background/95 backdrop-blur-md border-border/50 py-4"
-            : "bg-transparent py-6 md:py-8"
+            ? "bg-background/95 backdrop-blur-md border-border/50 py-2"
+            : "bg-transparent py-3 md:py-4"
         )}
       >
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -44,7 +44,7 @@ export function Navigation() {
             <img
               src={`${import.meta.env.BASE_URL}fulllogo_transparent_nobuffer.png`}
               alt="Finer Build Construction"
-              className="h-16 md:h-20 lg:h-24 w-auto"
+              className="h-20 md:h-24 lg:h-28 w-auto"
             />
           </Link>
 
