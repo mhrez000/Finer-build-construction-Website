@@ -8,7 +8,7 @@ export function Footer() {
           <img
             src={`${import.meta.env.BASE_URL}fulllogo_transparent_nobuffer.png`}
             alt="Finer Build Construction"
-            className="h-12 w-auto brightness-0 invert"
+            className="h-20 md:h-24 w-auto brightness-0 invert"
           />
           <p className="text-muted text-sm leading-relaxed max-w-sm">
             Crafting your vision, one frame at a time. Defining excellence in residential carpentry across Greater Melbourne.
