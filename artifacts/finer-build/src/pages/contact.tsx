@@ -42,12 +42,24 @@ export default function Contact() {
     }
   });
 
-  // Mock mutation for form submission
+  // Submit form via Formsubmit.co → emails info@finerbuild.com.au
   const mutation = useMutation({
     mutationFn: async (data: ContactFormValues) => {
-      // Simulate network delay
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      return data;
+      const res = await fetch("https://formsubmit.co/ajax/info@finerbuild.com.au", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          service: data.service,
+          message: data.message,
+          _subject: `New inquiry from ${data.name} — ${data.service}`,
+          _template: "table",
+        }),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      return res.json();
     },
     onSuccess: () => {
       toast({
