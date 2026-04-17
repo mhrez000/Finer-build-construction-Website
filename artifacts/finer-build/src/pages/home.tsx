@@ -106,10 +106,10 @@ export default function Home() {
   return (
     <PageWrapper className="pt-0 md:pt-0">
       {/* ── Hero Card ────────────────────────────────────────── */}
-      <section className="pt-32 md:pt-36 pb-12 md:pb-20">
-        <div className="max-w-[1600px] mx-auto px-4 md:px-8">
+      <section className="pt-28 md:pt-36 pb-8 md:pb-20">
+        <div className="max-w-[1600px] mx-auto px-3 md:px-8">
           <motion.div
-            className="relative overflow-hidden rounded-3xl bg-foreground text-background min-h-[600px] md:min-h-[680px]"
+            className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-foreground text-background"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, ease: EASE }}
@@ -137,27 +137,27 @@ export default function Home() {
               />
             </video>
 
-            {/* Dark overlay for text legibility */}
-            <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/60 to-foreground/20 lg:from-foreground/85 lg:via-foreground/40 lg:to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-foreground/30" />
+            {/* Dark overlay for text legibility — stronger on mobile since text fills full width */}
+            <div className="absolute inset-0 bg-foreground/60 md:bg-transparent md:bg-gradient-to-r md:from-foreground/85 md:via-foreground/40 md:to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-foreground/20 via-transparent to-foreground/40" />
 
-            {/* Text content overlay — split top/bottom around the video logo */}
+            {/* Text content overlay — stacks on mobile, splits on desktop */}
             <motion.div
-              className="relative z-10 flex flex-col justify-between px-10 md:px-16 lg:px-20 pt-6 md:pt-8 lg:pt-10 pb-10 md:pb-16 lg:pb-20 min-h-[600px] md:min-h-[680px]"
+              className="relative z-10 flex flex-col justify-between px-6 md:px-16 lg:px-20 pt-6 md:pt-8 lg:pt-10 pb-8 md:pb-16 lg:pb-20 min-h-[75vh] md:min-h-[680px]"
               variants={staggerContainer}
               initial="hidden"
               animate="visible"
             >
-              {/* Top group: chip + headline (above the video logo) */}
-              <div className="max-w-md md:max-w-lg lg:max-w-xl">
-                <motion.div variants={fadeUpSmall} className="mb-8 md:mb-10">
-                  <span className="inline-block text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-accent border border-accent/40 rounded-full px-4 py-2">
+              {/* Top group: chip + headline */}
+              <div className="max-w-sm md:max-w-lg lg:max-w-xl">
+                <motion.div variants={fadeUpSmall} className="mb-6 md:mb-10">
+                  <span className="inline-block text-[0.55rem] md:text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-accent border border-accent/40 rounded-full px-3 md:px-4 py-1.5 md:py-2">
                     Crafting Tomorrow's Living Spaces
                   </span>
                 </motion.div>
                 <motion.h1
                   variants={fadeUp}
-                  className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-serif leading-[1.05]"
+                  className="text-3xl md:text-5xl lg:text-5xl xl:text-6xl font-serif leading-[1.05]"
                 >
                   Set New Standards<br />
                   in <span className="italic text-accent">Modern</span><br />
@@ -165,11 +165,11 @@ export default function Home() {
                 </motion.h1>
               </div>
 
-              {/* Bottom group: description + buttons (below the video logo) */}
-              <div className="max-w-md md:max-w-lg lg:max-w-xl">
+              {/* Bottom group: description + buttons */}
+              <div className="max-w-sm md:max-w-lg lg:max-w-xl">
                 <motion.p
                   variants={fadeUp}
-                  className="text-base md:text-lg text-background/80 max-w-md mb-8 leading-relaxed"
+                  className="text-sm md:text-lg text-background/80 max-w-md mb-6 md:mb-8 leading-relaxed"
                 >
                   Premium residential carpentry, renovations, and architectural framing — built across Greater Melbourne with unyielding precision.
                 </motion.p>
