@@ -9,17 +9,13 @@ const SERVICES = [
   {
     title: "Stick Built Framing",
     description: "The traditional method of constructing homes piece by piece on site. Ideal for custom architectural designs with unique structural requirements, complex rooflines, or difficult site access. Our carpenters are masters of precision timber framing.",
+    // Using a real Finer Build new-build photo until a stick-framing in-progress photo is uploaded to public/services/stick-framing/
     image: `${B}projects/new-build/Finer Build.jpg`,
   },
   {
     title: "Pre-Fab Framing",
     description: "Managing the rapid installation of off-site manufactured frames and trusses. This method ensures consistent quality in a controlled environment and significantly reduces on-site construction time, perfect for modern residential developments.",
     image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2831&auto=format&fit=crop",
-  },
-  {
-    title: "Material Supply",
-    description: "We source and supply premium construction materials directly to your site — from certified structural timber and engineered beams to premium hardwood decking, fixings, and hardware. Our established industry relationships mean trade-competitive pricing, reliable availability, and every material fully compliant with Australian building standards. Whether you're a builder needing bulk supply or a homeowner after quality materials for your project, we deliver.",
-    image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2940&auto=format&fit=crop",
   },
   {
     title: "Renovations",
@@ -30,6 +26,11 @@ const SERVICES = [
     title: "Decking & Pergolas",
     description: "Designing and constructing durable, aesthetic outdoor living spaces perfectly suited for the Australian climate. We work with premium hardwoods, composite materials, and structural timber to create seamless indoor-outdoor extensions of your home.",
     image: `${B}projects/deck/IMG_0412.jpg`,
+  },
+  {
+    title: "Material Supply",
+    description: "We leverage our industry relationships to source and supply high-quality construction materials, ensuring all materials used are fully compliant with stringent Australian building standards.",
+    image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2940&auto=format&fit=crop",
   },
 ];
 

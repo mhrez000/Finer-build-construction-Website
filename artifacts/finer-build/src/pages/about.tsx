@@ -40,11 +40,11 @@ export default function About() {
                 We believe that the unseen elements of a home—the studs, the joists, the structural beams—are just as critical as the final finishes. A truly luxurious home requires a perfect skeleton.
               </p>
               <p>
-                Whether it's complex stick-built framing for an architectural new build, managing efficient pre-fab installations, sourcing premium construction materials, or crafting bespoke hardwood decking, our team operates with a commitment to excellence that ensures every project stands the test of time.
+                Whether it's complex stick-built framing for an architectural new build, managing efficient pre-fab installations, or crafting bespoke hardwood decking, our team operates with a commitment to excellence that ensures every project stands the test of time.
               </p>
             </div>
             
-            <div className="mt-12 grid grid-cols-3 gap-8">
+            <div className="mt-12 grid grid-cols-2 gap-8">
               <div>
                 <span className="block text-4xl font-serif text-accent mb-2">10+</span>
                 <span className="text-xs font-semibold tracking-widest uppercase">Years Experience</span>
@@ -52,10 +52,6 @@ export default function About() {
               <div>
                 <span className="block text-4xl font-serif text-accent mb-2">150+</span>
                 <span className="text-xs font-semibold tracking-widest uppercase">Projects Completed</span>
-              </div>
-              <div>
-                <span className="block text-4xl font-serif text-accent mb-2">Direct</span>
-                <span className="text-xs font-semibold tracking-widest uppercase">Material Supply</span>
               </div>
             </div>
           </div>

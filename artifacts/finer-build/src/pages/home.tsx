@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CoverflowCarousel } from "@/components/CoverflowCarousel";
 import { Link } from "wouter";
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, CheckCircle2, ShieldCheck, Ruler, Home as HomeIcon, Hammer, Wrench, Package, Truck } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Ruler, Home as HomeIcon, Hammer, Wrench } from "lucide-react";
 
 // -------------------------------------------------------------
 // Data
@@ -73,12 +73,10 @@ const INCLUSIONS = [
   "Engineered timber framing to AS1684 standards",
   "Premium hardwood decking and joinery",
   "Architectural roofline detailing",
-  "Premium material sourcing & direct-to-site delivery",
+  "Bespoke window and door installations",
   "Heritage-sensitive renovation framing",
   "Structural beam and column work",
   "Pre-fab and stick-built integration",
-  "Certified structural timber & engineered beams",
-  "Bespoke window and door installations",
   "Marine-grade outdoor structures",
 ];
 
@@ -173,7 +171,7 @@ export default function Home() {
                   variants={fadeUp}
                   className="text-sm md:text-lg text-background/80 max-w-md mb-6 md:mb-8 leading-relaxed"
                 >
-                  Premium residential carpentry, renovations, architectural framing, and material supply — built across Greater Melbourne with unyielding precision.
+                  Premium residential carpentry, renovations, and architectural framing — built across Greater Melbourne with unyielding precision.
                 </motion.p>
                 <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
                   <Link href="/contact">
@@ -419,7 +417,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -428,7 +426,6 @@ export default function Home() {
             {[
               { icon: Hammer, title: "Stick Built Framing", desc: "Custom on-site structural framing." },
               { icon: Wrench, title: "Pre-Fab Framing", desc: "Efficient, precision off-site manufacture." },
-              { icon: Package, title: "Material Supply", desc: "Premium materials sourced & delivered to site." },
               { icon: HomeIcon, title: "Renovations", desc: "Transforming existing residential spaces." },
               { icon: Ruler, title: "Decks & Pergolas", desc: "Premium outdoor entertainment areas." },
             ].map((srv, i) => (
@@ -459,105 +456,6 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* ── Material Supply Callout ─────────────────────────── */}
-      <section className="py-12 md:py-20">
-        <div className="max-w-[1600px] mx-auto px-4 md:px-8">
-          <motion.div
-            className="relative overflow-hidden rounded-3xl bg-foreground text-background"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1.0, ease: EASE }}
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px] md:min-h-[480px]">
-              {/* Left — image */}
-              <motion.div
-                className="relative overflow-hidden min-h-[250px] lg:min-h-full order-2 lg:order-1"
-                initial={{ opacity: 0, scale: 1.05 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 1.6, ease: EASE, delay: 0.2 }}
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2940&auto=format&fit=crop"
-                  alt="Premium construction materials"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </motion.div>
-
-              {/* Right — text */}
-              <div className="flex flex-col justify-center p-10 md:p-16 lg:p-20 order-1 lg:order-2">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.8, ease: EASE }}
-                >
-                  <span className="inline-flex items-center gap-2 text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-accent mb-6">
-                    <Truck className="w-4 h-4" strokeWidth={1.5} />
-                    Material Supply
-                  </span>
-                </motion.div>
-                <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.8, ease: EASE, delay: 0.1 }}
-                  className="text-3xl md:text-4xl lg:text-5xl font-serif leading-[1.1] mb-6"
-                >
-                  Premium Materials, <span className="italic text-accent">Delivered</span>
-                </motion.h2>
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.8, ease: EASE, delay: 0.2 }}
-                  className="text-background/70 leading-relaxed mb-8 max-w-md"
-                >
-                  We leverage our industry relationships to source and supply high-quality construction materials directly to your site. Every material is fully compliant with Australian building standards.
-                </motion.p>
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.8, ease: EASE, delay: 0.3 }}
-                  className="grid grid-cols-2 gap-x-6 gap-y-3 mb-10 max-w-md"
-                >
-                  {[
-                    "Certified structural timber",
-                    "Engineered beams & trusses",
-                    "Premium hardwood decking",
-                    "Trade pricing for builders",
-                    "Direct-to-site delivery",
-                    "AS compliant materials",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-2 text-sm text-background/80">
-                      <span className="text-accent mt-0.5">›</span>
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.8, ease: EASE, delay: 0.45 }}
-                >
-                  <Link href="/contact">
-                    <Button
-                      size="default"
-                      className="rounded-full bg-black text-background hover:bg-black/80 px-7"
-                    >
-                      Enquire About Materials
-                    </Button>
-                  </Link>
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 
