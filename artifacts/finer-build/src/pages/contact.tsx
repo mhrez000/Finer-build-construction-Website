@@ -87,7 +87,7 @@ export default function Contact() {
             <div>
               <h2 className="text-3xl font-serif mb-6">Contact Information</h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Reach out to discuss your upcoming residential construction, framing, or renovation project in Greater Melbourne.
+                Reach out to discuss your upcoming residential construction, framing, renovation, or material supply project in Greater Melbourne.
               </p>
               
               <div className="flex flex-col gap-8">
@@ -189,9 +189,9 @@ export default function Contact() {
                         <SelectContent className="rounded-none border-border">
                           <SelectItem value="stick-framing">Stick Built Framing</SelectItem>
                           <SelectItem value="prefab-framing">Pre-Fab Framing</SelectItem>
+                          <SelectItem value="materials">Material Supply</SelectItem>
                           <SelectItem value="renovations">Renovations</SelectItem>
                           <SelectItem value="decks">Decks & Pergolas</SelectItem>
-                          <SelectItem value="materials">Material Supply</SelectItem>
                           <SelectItem value="other">Other / Custom</SelectItem>
                         </SelectContent>
                       </Select>

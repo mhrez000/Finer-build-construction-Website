@@ -26,11 +26,11 @@ export function Footer() {
 
         <div className="flex flex-col gap-4">
           <h4 className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-2">Services</h4>
-          <span className="text-muted text-sm">Stick Built Framing</span>
-          <span className="text-muted text-sm">Pre-Fab Framing</span>
-          <span className="text-muted text-sm">Decking & Pergolas</span>
-          <span className="text-muted text-sm">Renovations</span>
-          <span className="text-muted text-sm">Material Supply</span>
+          <Link href="/services" className="text-muted hover:text-background transition-colors text-sm w-fit">Stick Built Framing</Link>
+          <Link href="/services" className="text-muted hover:text-background transition-colors text-sm w-fit">Pre-Fab Framing</Link>
+          <Link href="/services" className="text-muted hover:text-background transition-colors text-sm w-fit">Material Supply</Link>
+          <Link href="/services" className="text-muted hover:text-background transition-colors text-sm w-fit">Renovations</Link>
+          <Link href="/services" className="text-muted hover:text-background transition-colors text-sm w-fit">Decking & Pergolas</Link>
         </div>
 
         <div className="flex flex-col gap-4">
