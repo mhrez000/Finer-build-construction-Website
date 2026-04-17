@@ -106,7 +106,7 @@ export default function Home() {
   return (
     <PageWrapper className="pt-0 md:pt-0">
       {/* ── Hero Card ────────────────────────────────────────── */}
-      <section className="pt-24 md:pt-28 pb-8 md:pb-20">
+      <section className="pt-20 md:pt-20 pb-8 md:pb-20">
         <div className="max-w-[1600px] mx-auto px-3 md:px-8">
           <motion.div
             className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-foreground text-background"
