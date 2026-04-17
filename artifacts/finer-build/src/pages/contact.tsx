@@ -95,7 +95,7 @@ export default function Contact() {
                   <Phone className="w-5 h-5 text-accent mt-1" strokeWidth={1.5} />
                   <div>
                     <span className="block text-xs font-semibold tracking-widest uppercase mb-1">Phone</span>
-                    <a href="tel:0400000000" className="text-lg hover:text-accent transition-colors">0400 000 000</a>
+                    <a href="tel:0412398388" className="text-lg hover:text-accent transition-colors">0412 398 388</a>
                   </div>
                 </div>
                 
@@ -103,7 +103,7 @@ export default function Contact() {
                   <Mail className="w-5 h-5 text-accent mt-1" strokeWidth={1.5} />
                   <div>
                     <span className="block text-xs font-semibold tracking-widest uppercase mb-1">Email</span>
-                    <a href="mailto:info@finerbuild.com.au" className="text-lg hover:text-accent transition-colors">info@finerbuild.com.au</a>
+                    <a href="mailto:finerbc@gmail.com" className="text-lg hover:text-accent transition-colors">finerbc@gmail.com</a>
                   </div>
                 </div>
                 
@@ -152,7 +152,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel className="text-xs uppercase tracking-widest">Phone Number</FormLabel>
                         <FormControl>
-                          <Input placeholder="0400 000 000" className="h-12 bg-background border-border rounded-none" {...field} />
+                          <Input placeholder="0412 398 388" className="h-12 bg-background border-border rounded-none" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>

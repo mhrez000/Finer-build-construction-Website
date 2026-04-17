@@ -35,11 +35,11 @@ export function Footer() {
 
         <div className="flex flex-col gap-4">
           <h4 className="text-xs font-semibold tracking-[0.2em] uppercase text-accent mb-2">Contact</h4>
-          <a href="tel:0400000000" className="text-muted hover:text-background transition-colors text-sm w-fit">
-            0400 000 000
+          <a href="tel:0412398388" className="text-muted hover:text-background transition-colors text-sm w-fit">
+            0412 398 388
           </a>
-          <a href="mailto:info@finerbuild.com.au" className="text-muted hover:text-background transition-colors text-sm w-fit">
-            info@finerbuild.com.au
+          <a href="mailto:finerbc@gmail.com" className="text-muted hover:text-background transition-colors text-sm w-fit">
+            finerbc@gmail.com
           </a>
           <span className="text-muted text-sm mt-4">
             Greater Melbourne & Surrounds<br/>
