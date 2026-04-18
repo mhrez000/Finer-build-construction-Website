@@ -38,8 +38,8 @@ export function Footer() {
           <a href="tel:0412398388" className="text-muted hover:text-background transition-colors text-sm w-fit">
             0412 398 388
           </a>
-          <a href="mailto:info@finerbuild.com.au" className="text-muted hover:text-background transition-colors text-sm w-fit">
-            info@finerbuild.com.au
+          <a href="mailto:finerbc@gmail.com" className="text-muted hover:text-background transition-colors text-sm w-fit">
+            finerbc@gmail.com
           </a>
           <span className="text-muted text-sm mt-4">
             Greater Melbourne & Surrounds<br/>
