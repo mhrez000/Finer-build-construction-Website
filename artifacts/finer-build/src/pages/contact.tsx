@@ -42,10 +42,11 @@ export default function Contact() {
     }
   });
 
-  // Submit form via Formsubmit.co → emails info@finerbuild.com.au
+  // Submit form via Formsubmit.co → emails finerbc@gmail.com
+  // (swap to info@finerbuild.com.au once Workspace email is set up)
   const mutation = useMutation({
     mutationFn: async (data: ContactFormValues) => {
-      const res = await fetch("https://formsubmit.co/ajax/info@finerbuild.com.au", {
+      const res = await fetch("https://formsubmit.co/ajax/finerbc@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
